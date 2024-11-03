@@ -1,0 +1,38 @@
+{
+  "name": "dstc",
+  "version": "0.0.0",
+  "description": "A high-performance JavaScript and TypeScript library offering a comprehensive set of efficient data structures. Simplify your algorithm implementation and data manipulation with optimized, easy-to-use tools.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabriel-logan/dstc.git"
+  },
+  "keywords": [
+    "data-structures",
+    "toolkit",
+    "collection",
+    "JavaScript",
+    "TypeScript",
+    "algorithms",
+    "performance",
+    "optimized",
+    "linked-list",
+    "tree",
+    "graph",
+    "heap",
+    "stack",
+    "queue",
+    "library",
+    "utilities",
+    "DSTC"
+  ],
+  "author": "Gabriel Logan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gabriel-logan/dstc/issues"
+  },
+  "homepage": "https://github.com/gabriel-logan/dstc#readme"
+}
