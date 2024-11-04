@@ -2,7 +2,12 @@
   "name": "dstc",
   "version": "0.0.0",
   "description": "A high-performance JavaScript and TypeScript library offering a comprehensive set of efficient data structures. Simplify your algorithm implementation and data manipulation with optimized, easy-to-use tools.",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./types/index.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
   "scripts": {
     "test": "jest --verbose",
     "test:watch": "jest --watch",
