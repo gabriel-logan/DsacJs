@@ -1,3 +1,5 @@
+import Logger from "../lib/Logger";
+
 class ListNode<T = any> {
   public data: T | undefined;
   public next: ListNode<T> | null;
@@ -9,6 +11,8 @@ class ListNode<T = any> {
 }
 
 export default class LinkedList<T = any> {
+  private readonly logger = new Logger(LinkedList.name);
+
   private head: ListNode<T> | null = null;
 
   add(data: T): void {
@@ -39,8 +43,7 @@ export default class LinkedList<T = any> {
   print(): void {
     let current = this.head;
     while (current) {
-      // eslint-disable-next-line no-console
-      console.log(current.data);
+      this.logger.log(String(current.data));
       current = current.next;
     }
   }

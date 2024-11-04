@@ -1,4 +1,5 @@
 import { LinkedList } from "../../src";
+import Logger from "../../src/lib/Logger";
 
 describe("LinkedList", () => {
   it("should add a new node to the list", () => {
@@ -9,8 +10,8 @@ describe("LinkedList", () => {
   });
 
   it("should print the list", () => {
-    const spyConsoleLog = jest
-      .spyOn(console, "log")
+    const spyLog = jest
+      .spyOn(Logger.prototype, "log")
       .mockImplementation(() => {});
 
     const list = new LinkedList<number>();
@@ -21,6 +22,6 @@ describe("LinkedList", () => {
 
     list.print();
 
-    expect(spyConsoleLog).toHaveBeenCalledTimes(3);
+    expect(spyLog).toHaveBeenCalledTimes(3);
   });
 });
