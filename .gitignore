@@ -131,6 +131,7 @@ dist
 
 # Local Directories
 localtest/
+types/
 
 # Local Files
 localfile.txt

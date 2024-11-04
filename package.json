@@ -7,7 +7,7 @@
     "test": "jest --verbose",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
-    "build": "tsc",
+    "build": "rm -rf dist && rm -rf types && tsc -p tsconfig.build.json && tsc -p tsconfig.types.json",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "format": "prettier --write ."
