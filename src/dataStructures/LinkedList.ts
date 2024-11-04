@@ -1,4 +1,4 @@
-class ListNode<T> {
+class ListNode<T = any> {
   public data: T | undefined;
   public next: ListNode<T> | null;
 
@@ -8,7 +8,7 @@ class ListNode<T> {
   }
 }
 
-export default class LinkedList<T> {
+export default class LinkedList<T = any> {
   private head: ListNode<T> | null = null;
 
   add(data: T): void {
