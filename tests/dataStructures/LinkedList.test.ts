@@ -15,9 +15,43 @@ describe("LinkedList", () => {
     });
   });
 
-  describe("Prepend", () => {});
+  describe("Prepend", () => {
+    it("should prepend a new node to an empty list", () => {
+      const list = new LinkedList();
+      list.prepend(1);
+      expect(list.head?.value).toBe(1);
+      expect(list.tail?.value).toBe(1);
+      expect(list.size).toBe(1);
+    });
 
-  describe("Append", () => {});
+    it("should prepend a new node to a non-empty list", () => {
+      const list = new LinkedList();
+      list.prepend(1);
+      list.prepend(2);
+      expect(list.head?.value).toBe(2);
+      expect(list.tail?.value).toBe(1);
+      expect(list.size).toBe(2);
+    });
+  });
+
+  describe("Append", () => {
+    it("should append a new node to an empty list", () => {
+      const list = new LinkedList();
+      list.append(1);
+      expect(list.head?.value).toBe(1);
+      expect(list.tail?.value).toBe(1);
+      expect(list.size).toBe(1);
+    });
+
+    it("should append a new node to a non-empty list", () => {
+      const list = new LinkedList();
+      list.append(1);
+      list.append(2);
+      expect(list.head?.value).toBe(1);
+      expect(list.tail?.value).toBe(2);
+      expect(list.size).toBe(2);
+    });
+  });
 
   describe("Print", () => {
     it("should print an empty list", () => {
@@ -42,7 +76,8 @@ describe("LinkedList", () => {
 
       list.print();
 
-      expect(spyLogger).toHaveBeenCalledTimes(3);
+      expect(spyLogger).toHaveBeenCalledTimes(1);
+      expect(spyLogger).toHaveBeenCalledWith("3 -> 2 -> 1 -> null");
     });
   });
 

@@ -1,21 +1,26 @@
 import Logger from "../lib/Logger";
 
 class ListNode<T = any> {
-  public data: T;
+  public value: T;
   public next: ListNode<T> | null;
 
-  constructor(data: T, next?: ListNode<T>) {
-    this.data = data;
-    this.next = next || null;
+  constructor(value: T) {
+    this.value = value;
+    this.next = null;
   }
 }
 
 export default class LinkedList<T = any> {
   private readonly logger = new Logger();
 
-  public head: ListNode<T> | null = null;
-  public tail: ListNode<T> | null = null;
+  public head: ListNode<T> | null;
+  public tail: ListNode<T> | null;
   public size: number = 0;
+
+  constructor() {
+    this.head = null;
+    this.tail = null;
+  }
 
   // O(1)
   isEmpty(): boolean {
@@ -23,8 +28,8 @@ export default class LinkedList<T = any> {
   }
 
   // O(1)
-  prepend(data: T): void {
-    const newNode = new ListNode(data);
+  prepend(value: T): void {
+    const newNode = new ListNode(value);
     if (this.isEmpty()) {
       this.head = newNode;
       this.tail = newNode;
@@ -35,6 +40,22 @@ export default class LinkedList<T = any> {
     this.size++;
   }
 
+  // O(1)
+  append(value: T): void {
+    const newNode = new ListNode(value);
+    if (this.isEmpty()) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      if (this.tail) {
+        this.tail.next = newNode;
+      }
+      this.tail = newNode;
+    }
+    this.size++;
+  }
+
+  // O(n)
   print(): void {
     if (this.isEmpty()) {
       return this.logger.info("List is empty");
@@ -44,7 +65,7 @@ export default class LinkedList<T = any> {
     let listValues = "";
 
     while (current) {
-      listValues += `${current.data} -> `;
+      listValues += `${current.value} -> `;
       current = current.next;
     }
 
@@ -53,9 +74,3 @@ export default class LinkedList<T = any> {
     this.logger.info(listValues);
   }
 }
-
-const linkedList = new LinkedList<number>();
-
-linkedList.prepend(1);
-
-linkedList.print();
