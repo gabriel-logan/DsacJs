@@ -7,59 +7,59 @@ export default class Logger {
     this.prefix = prefix;
   }
 
-  log(message: string): void {
+  log(data: any): void {
     if (this.prefix) {
-      console.log(`[${this.prefix}] ${message}`);
+      console.log(`[${this.prefix}] ${data}`);
     } else {
-      console.log(message);
+      console.log(data);
     }
   }
 
-  error(message: string): void {
+  error(data: any): void {
     if (this.prefix) {
-      console.error(`[${this.prefix}] ${message}`);
+      console.error(`[${this.prefix}] ${data}`);
     } else {
-      console.error(message);
+      console.error(data);
     }
   }
 
-  warn(message: string): void {
+  warn(data: any): void {
     if (this.prefix) {
-      console.warn(`[${this.prefix}] ${message}`);
+      console.warn(`[${this.prefix}] ${data}`);
     } else {
-      console.warn(message);
+      console.warn(data);
     }
   }
 
-  info(message: string): void {
+  info(data: any): void {
     if (this.prefix) {
-      console.info(`[${this.prefix}] ${message}`);
+      console.info(`[${this.prefix}] ${data}`);
     } else {
-      console.info(message);
+      console.info(data);
     }
   }
 
-  debug(message: string): void {
+  debug(data: any): void {
     if (this.prefix) {
-      console.debug(`[${this.prefix}] ${message}`);
+      console.debug(`[${this.prefix}] ${data}`);
     } else {
-      console.debug(message);
+      console.debug(data);
     }
   }
 
-  trace(message: string): void {
+  trace(data: any): void {
     if (this.prefix) {
-      console.trace(`[${this.prefix}] ${message}`);
+      console.trace(`[${this.prefix}] ${data}`);
     } else {
-      console.trace(message);
+      console.trace(data);
     }
   }
 
-  group(message: string): void {
+  group(data: any): void {
     if (this.prefix) {
-      console.group(`[${this.prefix}] ${message}`);
+      console.group(`[${this.prefix}] ${data}`);
     } else {
-      console.group(message);
+      console.group(data);
     }
   }
 
@@ -67,11 +67,11 @@ export default class Logger {
     console.groupEnd();
   }
 
-  verbose(message: string): void {
+  verbose(data: any): void {
     if (this.prefix) {
-      console.log(`[VERBOSE] [${this.prefix}] ${message}`);
+      console.log(`[VERBOSE] [${this.prefix}] ${data}`);
     } else {
-      console.log(`[VERBOSE] ${message}`);
+      console.log(`[VERBOSE] ${data}`);
     }
   }
 }
