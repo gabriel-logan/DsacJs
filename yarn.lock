@@ -2861,9 +2861,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dstc@workspace:.":
+"dsacjs@workspace:.":
   version: 0.0.0-use.local
-  resolution: "dstc@workspace:."
+  resolution: "dsacjs@workspace:."
   dependencies:
     "@babel/core": "npm:^7.26.0"
     "@babel/preset-env": "npm:^7.26.0"

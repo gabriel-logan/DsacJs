@@ -1,5 +1,5 @@
 {
-  "name": "dstc",
+  "name": "dsacjs",
   "version": "0.0.0",
   "description": "A high-performance JavaScript and TypeScript library offering a comprehensive set of efficient data structures. Simplify your algorithm implementation and data manipulation with optimized, easy-to-use tools.",
   "main": "./dist/index.js",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gabriel-logan/dstc.git"
+    "url": "git+https://github.com/gabriel-logan/dsacjs.git"
   },
   "keywords": [
     "data-structures",
@@ -38,14 +38,15 @@
     "queue",
     "library",
     "utilities",
-    "DSTC"
+    "dsacjs",
+    "DsacJs"
   ],
   "author": "Gabriel Logan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gabriel-logan/dstc/issues"
+    "url": "https://github.com/gabriel-logan/dsacjs/issues"
   },
-  "homepage": "https://github.com/gabriel-logan/dstc#readme",
+  "homepage": "https://github.com/gabriel-logan/dsacjs#readme",
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
