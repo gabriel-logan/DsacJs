@@ -21,7 +21,10 @@ describe("LinkedList", () => {
       list.prepend(1);
       expect(list.head?.value).toBe(1);
       expect(list.tail?.value).toBe(1);
+
       expect(list.size).toBe(1);
+      expect(list.head?.next).toBe(null);
+      expect(list.tail?.next).toBe(null);
     });
 
     it("should prepend a new node to a non-empty list", () => {
@@ -30,7 +33,10 @@ describe("LinkedList", () => {
       list.prepend(2);
       expect(list.head?.value).toBe(2);
       expect(list.tail?.value).toBe(1);
+
       expect(list.size).toBe(2);
+      expect(list.head?.next?.value).toBe(1);
+      expect(list.tail?.next).toBe(null);
     });
   });
 
@@ -40,7 +46,10 @@ describe("LinkedList", () => {
       list.append(1);
       expect(list.head?.value).toBe(1);
       expect(list.tail?.value).toBe(1);
+
       expect(list.size).toBe(1);
+      expect(list.head?.next).toBe(null);
+      expect(list.tail?.next).toBe(null);
     });
 
     it("should append a new node to a non-empty list", () => {
@@ -49,7 +58,10 @@ describe("LinkedList", () => {
       list.append(2);
       expect(list.head?.value).toBe(1);
       expect(list.tail?.value).toBe(2);
+
       expect(list.size).toBe(2);
+      expect(list.head?.next?.value).toBe(2);
+      expect(list.tail?.next).toBe(null);
     });
   });
 
@@ -87,7 +99,39 @@ describe("LinkedList", () => {
 
   describe("RemoveValue", () => {});
 
-  describe("RemoveLast", () => {});
+  describe("RemoveLast", () => {
+    it("should return null if the list is empty", () => {
+      const list = new LinkedList();
+      expect(list.removeLast()).toBe(null);
+    });
+
+    it("should remove the last node from the list", () => {
+      const list = new LinkedList();
+      list.prepend(1);
+      list.prepend(2);
+      list.prepend(3);
+
+      expect(list.removeLast()).toBe(1);
+
+      expect(list.tail?.value).toBe(2);
+      expect(list.head?.value).toBe(3);
+
+      expect(list.size).toBe(2);
+      expect(list.head?.next?.value).toBe(2);
+      expect(list.tail?.next).toBe(null);
+    });
+
+    it("should remove the last node from a list with one node", () => {
+      const list = new LinkedList();
+      list.prepend(1);
+
+      expect(list.removeLast()).toBe(1);
+
+      expect(list.size).toBe(0);
+      expect(list.tail).toBe(null);
+      expect(list.head).toBe(null);
+    });
+  });
 
   describe("RemoveFirst", () => {
     it("should return null if the list is empty", () => {
@@ -102,8 +146,12 @@ describe("LinkedList", () => {
       list.prepend(3);
 
       expect(list.removeFirst()).toBe(3);
+
       expect(list.size).toBe(2);
       expect(list.head?.value).toBe(2);
+      expect(list.tail?.value).toBe(1);
+      expect(list.head?.next?.value).toBe(1);
+      expect(list.tail?.next).toBe(null);
     });
 
     it("should remove the first node from a list with one node", () => {
@@ -113,6 +161,7 @@ describe("LinkedList", () => {
       expect(list.removeFirst()).toBe(1);
       expect(list.size).toBe(0);
       expect(list.head).toBe(null);
+      expect(list.tail).toBe(null);
     });
   });
 

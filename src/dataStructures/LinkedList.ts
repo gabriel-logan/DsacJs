@@ -64,7 +64,46 @@ export default class LinkedList<T = any> {
     this.head = this.head?.next || null;
     this.size--;
 
+    // Set tail to null if the list is now empty
+    if (this.isEmpty()) {
+      this.tail = null;
+    }
+
     return removedValue;
+  }
+
+  // O(n)
+  removeLast(): T | null {
+    if (this.isEmpty()) {
+      return null;
+    }
+
+    // Case when there's only one node
+    if (this.size === 1) {
+      const removedValue = this.head?.value ?? null;
+      this.head = null;
+      this.tail = null;
+      this.size--;
+      return removedValue;
+    }
+
+    // General case with more than one node
+    let current = this.head;
+    let previous = null;
+
+    while (current?.next) {
+      previous = current;
+      current = current.next;
+    }
+
+    if (previous) {
+      previous.next = null;
+    }
+
+    this.tail = previous;
+    this.size--;
+
+    return current?.value ?? null;
   }
 
   // O(n)
