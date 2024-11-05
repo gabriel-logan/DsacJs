@@ -89,7 +89,32 @@ describe("LinkedList", () => {
 
   describe("RemoveLast", () => {});
 
-  describe("RemoveFirst", () => {});
+  describe("RemoveFirst", () => {
+    it("should return null if the list is empty", () => {
+      const list = new LinkedList();
+      expect(list.removeFirst()).toBe(null);
+    });
+
+    it("should remove the first node from the list", () => {
+      const list = new LinkedList();
+      list.prepend(1);
+      list.prepend(2);
+      list.prepend(3);
+
+      expect(list.removeFirst()).toBe(3);
+      expect(list.size).toBe(2);
+      expect(list.head?.value).toBe(2);
+    });
+
+    it("should remove the first node from a list with one node", () => {
+      const list = new LinkedList();
+      list.prepend(1);
+
+      expect(list.removeFirst()).toBe(1);
+      expect(list.size).toBe(0);
+      expect(list.head).toBe(null);
+    });
+  });
 
   describe("Search", () => {});
 

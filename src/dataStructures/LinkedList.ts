@@ -55,6 +55,18 @@ export default class LinkedList<T = any> {
     this.size++;
   }
 
+  // O(1)
+  removeFirst(): T | null {
+    if (this.isEmpty()) {
+      return null;
+    }
+    const removedValue = this.head?.value ?? null;
+    this.head = this.head?.next || null;
+    this.size--;
+
+    return removedValue;
+  }
+
   // O(n)
   print(): void {
     if (this.isEmpty()) {
