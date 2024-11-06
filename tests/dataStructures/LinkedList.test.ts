@@ -10,15 +10,15 @@ describe("SingleLinkedList", () => {
 
     it("should return false if the list is not empty", () => {
       const list = new SingleLinkedList();
-      list.prepend(1);
+      list.addFirst(1);
       expect(list.isEmpty()).toBe(false);
     });
   });
 
-  describe("Prepend", () => {
-    it("should prepend a new node to an empty list", () => {
+  describe("AddFirst", () => {
+    it("should addFirst a new node to an empty list", () => {
       const list = new SingleLinkedList();
-      list.prepend(1);
+      list.addFirst(1);
       expect(list.head?.value).toBe(1);
       expect(list.tail?.value).toBe(1);
 
@@ -27,10 +27,10 @@ describe("SingleLinkedList", () => {
       expect(list.tail?.next).toBe(null);
     });
 
-    it("should prepend a new node to a non-empty list", () => {
+    it("should addFirst a new node to a non-empty list", () => {
       const list = new SingleLinkedList();
-      list.prepend(1);
-      list.prepend(2);
+      list.addFirst(1);
+      list.addFirst(2);
       expect(list.head?.value).toBe(2);
       expect(list.tail?.value).toBe(1);
 
@@ -40,10 +40,10 @@ describe("SingleLinkedList", () => {
     });
   });
 
-  describe("Append", () => {
-    it("should append a new node to an empty list", () => {
+  describe("AddLast", () => {
+    it("should addLast a new node to an empty list", () => {
       const list = new SingleLinkedList();
-      list.append(1);
+      list.addLast(1);
       expect(list.head?.value).toBe(1);
       expect(list.tail?.value).toBe(1);
 
@@ -52,10 +52,10 @@ describe("SingleLinkedList", () => {
       expect(list.tail?.next).toBe(null);
     });
 
-    it("should append a new node to a non-empty list", () => {
+    it("should addLast a new node to a non-empty list", () => {
       const list = new SingleLinkedList();
-      list.append(1);
-      list.append(2);
+      list.addLast(1);
+      list.addLast(2);
       expect(list.head?.value).toBe(1);
       expect(list.tail?.value).toBe(2);
 
@@ -78,9 +78,9 @@ describe("SingleLinkedList", () => {
     });
     it("should print the list", () => {
       const list = new SingleLinkedList();
-      list.prepend(1);
-      list.prepend(2);
-      list.prepend(3);
+      list.addFirst(1);
+      list.addFirst(2);
+      list.addFirst(3);
 
       const spyLogger = jest
         .spyOn(Logger.prototype, "info")
@@ -107,9 +107,9 @@ describe("SingleLinkedList", () => {
 
     it("should remove the last node from the list", () => {
       const list = new SingleLinkedList();
-      list.prepend(1);
-      list.prepend(2);
-      list.prepend(3);
+      list.addFirst(1);
+      list.addFirst(2);
+      list.addFirst(3);
 
       expect(list.removeLast()).toBe(1);
 
@@ -123,7 +123,7 @@ describe("SingleLinkedList", () => {
 
     it("should remove the last node from a list with one node", () => {
       const list = new SingleLinkedList();
-      list.prepend(1);
+      list.addFirst(1);
 
       expect(list.removeLast()).toBe(1);
 
@@ -141,9 +141,9 @@ describe("SingleLinkedList", () => {
 
     it("should remove the first node from the list", () => {
       const list = new SingleLinkedList();
-      list.prepend(1);
-      list.prepend(2);
-      list.prepend(3);
+      list.addFirst(1);
+      list.addFirst(2);
+      list.addFirst(3);
 
       expect(list.removeFirst()).toBe(3);
 
@@ -156,7 +156,7 @@ describe("SingleLinkedList", () => {
 
     it("should remove the first node from a list with one node", () => {
       const list = new SingleLinkedList();
-      list.prepend(1);
+      list.addFirst(1);
 
       expect(list.removeFirst()).toBe(1);
       expect(list.size).toBe(0);

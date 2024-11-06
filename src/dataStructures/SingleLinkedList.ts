@@ -28,7 +28,7 @@ export default class SingleLinkedList<T = any> {
   }
 
   // O(1)
-  prepend(value: T): void {
+  addFirst(value: T): void {
     const newNode = new ListNode(value);
     if (this.isEmpty()) {
       this.head = newNode;
@@ -41,7 +41,7 @@ export default class SingleLinkedList<T = any> {
   }
 
   // O(1)
-  append(value: T): void {
+  addLast(value: T): void {
     const newNode = new ListNode(value);
     if (this.isEmpty()) {
       this.head = newNode;
