@@ -32,6 +32,11 @@ export default class SingleLinkedList<T = any> {
     return this.head?.value ?? null;
   }
 
+  // O(1)
+  poll(): T | null {
+    return this.removeFirst();
+  }
+
   add(value: T): void;
   add(index: number, value: T): void;
 
@@ -196,5 +201,115 @@ export default class SingleLinkedList<T = any> {
     this.head = null;
     this.tail = null;
     this.size = 0;
+  }
+
+  // O(n)
+  indexOf(value: T): number {
+    let current = this.head;
+    let index = 0;
+
+    while (current) {
+      if (current.value === value) {
+        return index;
+      }
+
+      current = current.next;
+      index++;
+    }
+
+    return -1;
+  }
+
+  // O(1)
+  getFirst(): T | null {
+    return this.head?.value ?? null;
+  }
+
+  // O(1)
+  getLast(): T | null {
+    return this.tail?.value ?? null;
+  }
+
+  // O(n)
+  removeAt(index: number): T | null {
+    if (index < 0 || index >= this.size) {
+      return null;
+    }
+    return this.removeAtIndex(index);
+  }
+
+  // O(n)
+  remove(value: T): boolean {
+    return this.removeByValue(value);
+  }
+
+  // O(n)
+  private removeAtIndex(index: number): T | null {
+    if (index < 0 || index >= this.size) {
+      return null;
+    }
+
+    if (index === 0) {
+      return this.removeFirst();
+    }
+
+    if (index === this.size - 1) {
+      return this.removeLast();
+    }
+
+    let current = this.head;
+    let previous = null;
+    let i = 0;
+
+    while (i < index) {
+      previous = current;
+      current = current?.next || null;
+      i++;
+    }
+
+    if (previous) {
+      previous.next = current?.next || null;
+    }
+
+    this.size--;
+
+    return current?.value ?? null;
+  }
+
+  // O(n)
+  private removeByValue(value: T): boolean {
+    let current = this.head;
+    let previous = null;
+
+    while (current) {
+      if (current.value === value) {
+        if (previous) {
+          previous.next = current.next;
+        } else {
+          this.head = current.next;
+        }
+
+        this.size--;
+        return true;
+      }
+
+      previous = current;
+      current = current.next;
+    }
+
+    return false;
+  }
+
+  // O(n)
+  toArray(): T[] {
+    let current = this.head;
+    const listValues = [];
+
+    while (current) {
+      listValues.push(current.value);
+      current = current.next;
+    }
+
+    return listValues;
   }
 }
