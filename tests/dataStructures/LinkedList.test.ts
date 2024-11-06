@@ -122,11 +122,12 @@ describe("SingleLinkedList", () => {
     });
   });
 
-  describe("InsertAt", () => {});
+  describe("add At", () => {});
+  describe("add", () => {});
 
-  describe("RemoveAt", () => {});
+  describe("Remove At", () => {});
 
-  describe("RemoveValue", () => {});
+  describe("Remove", () => {});
 
   describe("RemoveLast", () => {
     it("should return null if the list is empty", () => {
@@ -194,9 +195,17 @@ describe("SingleLinkedList", () => {
     });
   });
 
-  describe("Search", () => {});
-
-  describe("Reverse", () => {});
+  describe("Contains", () => {});
 
   describe("Sort", () => {});
+
+  describe("Clear", () => {});
+
+  describe("Peak", () => {});
+
+  describe("Get", () => {});
+
+  describe("IndexOf", () => {});
+
+  describe("Iterator", () => {});
 });
