@@ -1,5 +1,6 @@
+import DoublyLinkedList from "./dataStructures/DoublyLinkedList";
 import Queue from "./dataStructures/Queue";
 import SingleLinkedList from "./dataStructures/SingleLinkedList";
 import Stack from "./dataStructures/Stack";
 
-export { SingleLinkedList, Stack, Queue };
+export { SingleLinkedList, Stack, Queue, DoublyLinkedList as LinkedList };
