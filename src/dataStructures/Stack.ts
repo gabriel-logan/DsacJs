@@ -15,8 +15,8 @@ export default class Stack<T = any> {
     return this.list.removeFirst();
   }
 
-  peak(): T | null {
-    return this.list.peak();
+  peek(): T | null {
+    return this.list.peek();
   }
 
   isEmpty(): boolean {

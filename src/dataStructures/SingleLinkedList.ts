@@ -28,7 +28,7 @@ export default class SingleLinkedList<T = any> {
   }
 
   // O(1)
-  peak(): T | null {
+  peek(): T | null {
     return this.head?.value ?? null;
   }
 

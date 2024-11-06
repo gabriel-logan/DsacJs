@@ -19,14 +19,14 @@ describe("Stack", () => {
     expect(stack.pop()).toBeNull();
   });
 
-  it("should return the correct peak element", () => {
+  it("should return the correct peek element", () => {
     stack.push(1);
     stack.push(2);
     stack.push(3);
 
-    expect(stack.peak()).toBe(3);
+    expect(stack.peek()).toBe(3);
     stack.pop();
-    expect(stack.peak()).toBe(2);
+    expect(stack.peek()).toBe(2);
   });
 
   it("should return true when stack is empty", () => {
