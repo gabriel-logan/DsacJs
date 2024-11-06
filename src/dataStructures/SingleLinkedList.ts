@@ -124,4 +124,27 @@ export default class SingleLinkedList<T = any> {
 
     this.logger.info(listValues);
   }
+
+  // O(n)
+  printReverse(): void {
+    if (this.isEmpty()) {
+      return this.logger.info("List is empty");
+    }
+
+    const reversedValues = this.collectReverseValues(this.head);
+    this.logger.info(reversedValues.join(" -> ") + " -> null");
+  }
+
+  private collectReverseValues(
+    node: ListNode<T> | null,
+    values: T[] = [],
+  ): T[] {
+    if (node === null) {
+      return values;
+    }
+
+    values = this.collectReverseValues(node.next, values);
+    values.push(node.value);
+    return values;
+  }
 }

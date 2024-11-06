@@ -93,6 +93,35 @@ describe("SingleLinkedList", () => {
     });
   });
 
+  describe("PrintReverse", () => {
+    it("should print an empty list", () => {
+      const list = new SingleLinkedList();
+      const spyLogger = jest
+        .spyOn(Logger.prototype, "info")
+        .mockImplementation(() => {});
+
+      list.printReverse();
+
+      expect(spyLogger).toHaveBeenCalledTimes(1);
+    });
+
+    it("should print the list in reverse", () => {
+      const list = new SingleLinkedList();
+      list.addFirst(1);
+      list.addFirst(2);
+      list.addFirst(3);
+
+      const spyLogger = jest
+        .spyOn(Logger.prototype, "info")
+        .mockImplementation(() => {});
+
+      list.printReverse();
+
+      expect(spyLogger).toHaveBeenCalledTimes(1);
+      expect(spyLogger).toHaveBeenCalledWith("1 -> 2 -> 3 -> null");
+    });
+  });
+
   describe("InsertAt", () => {});
 
   describe("RemoveAt", () => {});
