@@ -158,6 +158,11 @@ describe("SingleLinkedList", () => {
       expect(list.head?.next?.value).toBe(3);
       expect(list.tail?.next).toBe(null);
     });
+
+    it("should throw an error if the index is out of bounds", () => {
+      const list = new SingleLinkedList<number>();
+      expect(() => list.add(1, 1)).toThrow("Index out of bounds");
+    });
   });
   describe("add", () => {
     it("should add a new node at the end of the list", () => {
@@ -197,41 +202,97 @@ describe("SingleLinkedList", () => {
     });
   });
 
-  describe("Remove At", () => {});
+  describe("Remove At", () => {
+    it("should remove a node from the beginning of the list", () => {
+      const list = new SingleLinkedList<number>();
+      list.add(1);
+      list.add(2);
+      list.add(3);
 
-  describe("Remove", () => {});
-
-  describe("RemoveLast", () => {
-    it("should return null if the list is empty", () => {
-      const list = new SingleLinkedList();
-      expect(list.removeLast()).toBe(null);
+      expect(list.removeAt(0)).toBe(1);
+      expect(list.size).toBe(2);
+      expect(list.head?.value).toBe(2);
+      expect(list.tail?.value).toBe(3);
+      expect(list.head?.next?.value).toBe(3);
+      expect(list.tail?.next).toBe(null);
     });
 
-    it("should remove the last node from the list", () => {
-      const list = new SingleLinkedList();
-      list.addFirst(1);
-      list.addFirst(2);
-      list.addFirst(3);
+    it("should remove a node from the end of the list", () => {
+      const list = new SingleLinkedList<number>();
+      list.add(1);
+      list.add(2);
+      list.add(3);
 
-      expect(list.removeLast()).toBe(1);
-
-      expect(list.tail?.value).toBe(2);
-      expect(list.head?.value).toBe(3);
-
+      expect(list.removeAt(2)).toBe(3);
       expect(list.size).toBe(2);
+      expect(list.head?.value).toBe(1);
+      expect(list.tail?.value).toBe(2);
       expect(list.head?.next?.value).toBe(2);
       expect(list.tail?.next).toBe(null);
     });
 
-    it("should remove the last node from a list with one node", () => {
-      const list = new SingleLinkedList();
-      list.addFirst(1);
+    it("should remove a node from the middle of the list", () => {
+      const list = new SingleLinkedList<number>();
+      list.add(1);
+      list.add(2);
+      list.add(3);
 
-      expect(list.removeLast()).toBe(1);
+      expect(list.removeAt(1)).toBe(2);
+      expect(list.size).toBe(2);
+      expect(list.head?.value).toBe(1);
+      expect(list.tail?.value).toBe(3);
+      expect(list.head?.next?.value).toBe(3);
+      expect(list.tail?.next).toBe(null);
+    });
 
-      expect(list.size).toBe(0);
-      expect(list.tail).toBe(null);
-      expect(list.head).toBe(null);
+    it("should return null index < 0 or index >= size", () => {
+      const list = new SingleLinkedList<number>();
+      expect(list.removeAt(-1)).toBe(null);
+      expect(list.removeAt(0)).toBe(null);
+    });
+  });
+
+  describe("Remove", () => {
+    it("should remove the first occurrence of a value", () => {
+      const list = new SingleLinkedList<number>();
+      list.add(1);
+      list.add(2);
+      list.add(3);
+
+      expect(list.remove(2)).toBe(true);
+      expect(list.size).toBe(2);
+      expect(list.head?.value).toBe(1);
+      expect(list.tail?.value).toBe(3);
+      expect(list.head?.next?.value).toBe(3);
+      expect(list.tail?.next).toBe(null);
+    });
+
+    it("should return false if the value is not in the list", () => {
+      const list = new SingleLinkedList<number>();
+      list.add(1);
+      list.add(2);
+      list.add(3);
+
+      expect(list.remove(4)).toBe(false);
+      expect(list.size).toBe(3);
+      expect(list.head?.value).toBe(1);
+      expect(list.tail?.value).toBe(3);
+      expect(list.head?.next?.value).toBe(2);
+      expect(list.tail?.next).toBe(null);
+    });
+
+    it("head should point tu current.next if previous is null", () => {
+      const list = new SingleLinkedList<number>();
+      list.add(1);
+      list.add(2);
+      list.add(3);
+
+      expect(list.remove(1)).toBe(true);
+      expect(list.size).toBe(2);
+      expect(list.head?.value).toBe(2);
+      expect(list.tail?.value).toBe(3);
+      expect(list.head?.next?.value).toBe(3);
+      expect(list.tail?.next).toBe(null);
     });
   });
 
@@ -264,6 +325,40 @@ describe("SingleLinkedList", () => {
       expect(list.size).toBe(0);
       expect(list.head).toBe(null);
       expect(list.tail).toBe(null);
+    });
+  });
+
+  describe("RemoveLast", () => {
+    it("should return null if the list is empty", () => {
+      const list = new SingleLinkedList();
+      expect(list.removeLast()).toBe(null);
+    });
+
+    it("should remove the last node from the list", () => {
+      const list = new SingleLinkedList();
+      list.addFirst(1);
+      list.addFirst(2);
+      list.addFirst(3);
+
+      expect(list.removeLast()).toBe(1);
+
+      expect(list.tail?.value).toBe(2);
+      expect(list.head?.value).toBe(3);
+
+      expect(list.size).toBe(2);
+      expect(list.head?.next?.value).toBe(2);
+      expect(list.tail?.next).toBe(null);
+    });
+
+    it("should remove the last node from a list with one node", () => {
+      const list = new SingleLinkedList();
+      list.addFirst(1);
+
+      expect(list.removeLast()).toBe(1);
+
+      expect(list.size).toBe(0);
+      expect(list.tail).toBe(null);
+      expect(list.head).toBe(null);
     });
   });
 
@@ -309,9 +404,100 @@ describe("SingleLinkedList", () => {
 
   describe("Get", () => {});
 
-  describe("IndexOf", () => {});
+  describe("IndexOf", () => {
+    it("should return -1 if the list is empty", () => {
+      const list = new SingleLinkedList();
+      expect(list.indexOf(1)).toBe(-1);
+    });
+
+    it("should return -1 if the value is not in the list", () => {
+      const list = new SingleLinkedList();
+      list.addFirst(1);
+      list.addFirst(2);
+      list.addFirst(3);
+
+      expect(list.indexOf(4)).toBe(-1);
+    });
+
+    it("should return the index of the value in the list", () => {
+      const list = new SingleLinkedList();
+      list.addFirst(1);
+      list.addFirst(2);
+      list.addFirst(3);
+
+      expect(list.indexOf(2)).toBe(1);
+    });
+  });
 
   describe("Iterator", () => {});
 
-  describe("ToArray", () => {});
+  describe("ToArray", () => {
+    it("should return an empty array if the list is empty", () => {
+      const list = new SingleLinkedList();
+      expect(list.toArray()).toEqual([]);
+    });
+
+    it("should return an array with the values of the list", () => {
+      const list = new SingleLinkedList();
+      list.addFirst(1);
+      list.addFirst(2);
+      list.addFirst(3);
+
+      expect(list.toArray()).toEqual([3, 2, 1]);
+    });
+  });
+
+  describe("Poll", () => {
+    it("should return null if the list is empty", () => {
+      const list = new SingleLinkedList();
+      expect(list.poll()).toBe(null);
+    });
+
+    it("should return the first node of the list", () => {
+      const list = new SingleLinkedList();
+      list.addFirst(1);
+      list.addFirst(2);
+      list.addFirst(3);
+
+      expect(list.poll()).toBe(3);
+
+      expect(list.size).toBe(2);
+      expect(list.head?.value).toBe(2);
+      expect(list.tail?.value).toBe(1);
+      expect(list.head?.next?.value).toBe(1);
+      expect(list.tail?.next).toBe(null);
+    });
+  });
+
+  describe("GetFirst", () => {
+    it("should return null if the list is empty", () => {
+      const list = new SingleLinkedList();
+      expect(list.getFirst()).toBe(null);
+    });
+
+    it("should return the first node of the list", () => {
+      const list = new SingleLinkedList();
+      list.addFirst(1);
+      list.addFirst(2);
+      list.addFirst(3);
+
+      expect(list.getFirst()).toBe(3);
+    });
+  });
+
+  describe("GetLast", () => {
+    it("should return null if the list is empty", () => {
+      const list = new SingleLinkedList();
+      expect(list.getLast()).toBe(null);
+    });
+
+    it("should return the last node of the list", () => {
+      const list = new SingleLinkedList();
+      list.addFirst(1);
+      list.addFirst(2);
+      list.addFirst(3);
+
+      expect(list.getLast()).toBe(1);
+    });
+  });
 });

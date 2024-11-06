@@ -235,19 +235,6 @@ export default class SingleLinkedList<T = any> {
     if (index < 0 || index >= this.size) {
       return null;
     }
-    return this.removeAtIndex(index);
-  }
-
-  // O(n)
-  remove(value: T): boolean {
-    return this.removeByValue(value);
-  }
-
-  // O(n)
-  private removeAtIndex(index: number): T | null {
-    if (index < 0 || index >= this.size) {
-      return null;
-    }
 
     if (index === 0) {
       return this.removeFirst();
@@ -277,7 +264,7 @@ export default class SingleLinkedList<T = any> {
   }
 
   // O(n)
-  private removeByValue(value: T): boolean {
+  remove(value: T): boolean {
     let current = this.head;
     let previous = null;
 
