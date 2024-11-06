@@ -28,6 +28,11 @@ export default class SingleLinkedList<T = any> {
   }
 
   // O(1)
+  peak(): T | null {
+    return this.head?.value ?? null;
+  }
+
+  // O(1)
   addFirst(value: T): void {
     const newNode = new ListNode(value);
     if (this.isEmpty()) {
@@ -146,5 +151,11 @@ export default class SingleLinkedList<T = any> {
     values = this.collectReverseValues(node.next, values);
     values.push(node.value);
     return values;
+  }
+
+  clear(): void {
+    this.head = null;
+    this.tail = null;
+    this.size = 0;
   }
 }
