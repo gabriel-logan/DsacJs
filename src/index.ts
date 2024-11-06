@@ -1,4 +1,4 @@
-import binarySearch from "./Algorithms/binarySearch";
+import binarySearch from "./Algorithms/search/binarySearch";
 import DoublyLinkedList from "./dataStructures/DoublyLinkedList";
 import Queue from "./dataStructures/Queue";
 import SingleLinkedList from "./dataStructures/SingleLinkedList";

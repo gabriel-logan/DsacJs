@@ -1,4 +1,4 @@
-import binarySearch from "../../src/Algorithms/binarySearch";
+import binarySearch from "../../../src/Algorithms/search/binarySearch";
 
 describe("binarySearch", () => {
   it("should return the index of the target in a sorted array", () => {
