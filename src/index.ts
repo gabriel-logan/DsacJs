@@ -1,3 +1,4 @@
+import binarySearch from "./Algorithms/binarySearch";
 import DoublyLinkedList from "./dataStructures/DoublyLinkedList";
 import Queue from "./dataStructures/Queue";
 import SingleLinkedList from "./dataStructures/SingleLinkedList";
@@ -10,4 +11,5 @@ export {
   Queue,
   DoublyLinkedList as LinkedList,
   Logger,
+  binarySearch,
 };
