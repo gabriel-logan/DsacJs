@@ -18,4 +18,20 @@ export default class Queue<T = any> {
   peek(): T | null {
     return this.list.peek();
   }
+
+  isEmpty(): boolean {
+    return this.list.isEmpty();
+  }
+
+  size(): number {
+    return this.list.size;
+  }
+
+  print(): void {
+    return this.list.print();
+  }
+
+  clear(): void {
+    this.list.clear();
+  }
 }
