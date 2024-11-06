@@ -1,3 +1,3 @@
-import LinkedList from "./dataStructures/LinkedList";
+import SingleLinkedList from "./dataStructures/SingleLinkedList";
 
-export { LinkedList };
+export { SingleLinkedList };

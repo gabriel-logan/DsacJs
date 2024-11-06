@@ -10,7 +10,7 @@ class ListNode<T = any> {
   }
 }
 
-export default class LinkedList<T = any> {
+export default class SingleLinkedList<T = any> {
   private readonly logger = new Logger();
 
   public head: ListNode<T> | null;
