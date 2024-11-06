@@ -199,13 +199,47 @@ describe("SingleLinkedList", () => {
 
   describe("Sort", () => {});
 
-  describe("Clear", () => {});
+  describe("Clear", () => {
+    it("should clear an empty list", () => {
+      const list = new SingleLinkedList();
+      list.clear();
+      expect(list.size).toBe(0);
+    });
 
-  describe("Peak", () => {});
+    it("should clear a non-empty list", () => {
+      const list = new SingleLinkedList();
+      list.addFirst(1);
+      list.addFirst(2);
+      list.addFirst(3);
+
+      list.clear();
+      expect(list.size).toBe(0);
+      expect(list.head).toBe(null);
+      expect(list.tail).toBe(null);
+    });
+  });
+
+  describe("Peek", () => {
+    it("should return null if the list is empty", () => {
+      const list = new SingleLinkedList();
+      expect(list.peek()).toBe(null);
+    });
+
+    it("should return the first node of the list", () => {
+      const list = new SingleLinkedList();
+      list.addFirst(1);
+      list.addFirst(2);
+      list.addFirst(3);
+
+      expect(list.peek()).toBe(3);
+    });
+  });
 
   describe("Get", () => {});
 
   describe("IndexOf", () => {});
 
   describe("Iterator", () => {});
+
+  describe("ToArray", () => {});
 });
