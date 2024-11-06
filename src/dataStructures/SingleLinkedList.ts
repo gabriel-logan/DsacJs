@@ -118,14 +118,12 @@ export default class SingleLinkedList<T = any> {
     }
 
     let current = this.head;
-    let listValues = "";
+    const listValues = [];
 
     while (current) {
-      listValues += `${current.value} -> `;
+      listValues.push(current.value);
       current = current.next;
     }
-
-    listValues += "null";
 
     this.logger.info(listValues);
   }
@@ -136,23 +134,18 @@ export default class SingleLinkedList<T = any> {
       return this.logger.info("List is empty");
     }
 
-    const reversedValues = this.collectReverseValues(this.head);
-    this.logger.info(reversedValues.join(" -> ") + " -> null");
-  }
+    let current = this.head;
+    const listValues = [];
 
-  private collectReverseValues(
-    node: ListNode<T> | null,
-    values: T[] = [],
-  ): T[] {
-    if (node === null) {
-      return values;
+    while (current) {
+      listValues.unshift(current.value);
+      current = current.next;
     }
 
-    values = this.collectReverseValues(node.next, values);
-    values.push(node.value);
-    return values;
+    this.logger.info(listValues);
   }
 
+  // O(1)
   clear(): void {
     this.head = null;
     this.tail = null;

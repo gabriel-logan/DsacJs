@@ -89,7 +89,7 @@ describe("SingleLinkedList", () => {
       list.print();
 
       expect(spyLogger).toHaveBeenCalledTimes(1);
-      expect(spyLogger).toHaveBeenCalledWith("3 -> 2 -> 1 -> null");
+      expect(spyLogger).toHaveBeenCalledWith([3, 2, 1]);
     });
   });
 
@@ -118,7 +118,7 @@ describe("SingleLinkedList", () => {
       list.printReverse();
 
       expect(spyLogger).toHaveBeenCalledTimes(1);
-      expect(spyLogger).toHaveBeenCalledWith("1 -> 2 -> 3 -> null");
+      expect(spyLogger).toHaveBeenCalledWith([1, 2, 3]);
     });
   });
 
