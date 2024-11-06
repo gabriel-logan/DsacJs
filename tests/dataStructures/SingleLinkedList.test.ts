@@ -122,8 +122,80 @@ describe("SingleLinkedList", () => {
     });
   });
 
-  describe("add At", () => {});
-  describe("add", () => {});
+  describe("add At", () => {
+    it("should add a new node at the beginning of the list", () => {
+      const list = new SingleLinkedList<number>();
+      list.add(0, 1);
+      expect(list.head?.value).toBe(1);
+      expect(list.tail?.value).toBe(1);
+
+      expect(list.size).toBe(1);
+      expect(list.head?.next).toBe(null);
+      expect(list.tail?.next).toBe(null);
+    });
+
+    it("should add a new node at the end of the list", () => {
+      const list = new SingleLinkedList<number>();
+      list.add(0, 1);
+      list.add(1, 2);
+      expect(list.head?.value).toBe(1);
+      expect(list.tail?.value).toBe(2);
+
+      expect(list.size).toBe(2);
+      expect(list.head?.next?.value).toBe(2);
+      expect(list.tail?.next).toBe(null);
+    });
+
+    it("should add a new node in the middle of the list", () => {
+      const list = new SingleLinkedList<number>();
+      list.add(0, 1);
+      list.add(1, 2);
+      list.add(1, 3);
+      expect(list.head?.value).toBe(1);
+      expect(list.tail?.value).toBe(2);
+
+      expect(list.size).toBe(3);
+      expect(list.head?.next?.value).toBe(3);
+      expect(list.tail?.next).toBe(null);
+    });
+  });
+  describe("add", () => {
+    it("should add a new node at the end of the list", () => {
+      const list = new SingleLinkedList<number>();
+      list.add(1);
+      expect(list.head?.value).toBe(1);
+      expect(list.tail?.value).toBe(1);
+
+      expect(list.size).toBe(1);
+      expect(list.head?.next).toBe(null);
+      expect(list.tail?.next).toBe(null);
+    });
+
+    it("should add a new node at the end of the list", () => {
+      const list = new SingleLinkedList<number>();
+      list.add(1);
+      list.add(2);
+      expect(list.head?.value).toBe(1);
+      expect(list.tail?.value).toBe(2);
+
+      expect(list.size).toBe(2);
+      expect(list.head?.next?.value).toBe(2);
+      expect(list.tail?.next).toBe(null);
+    });
+
+    it("should add a new node at the end of the list", () => {
+      const list = new SingleLinkedList<number>();
+      list.add(1);
+      list.add(2);
+      list.add(3);
+      expect(list.head?.value).toBe(1);
+      expect(list.tail?.value).toBe(3);
+
+      expect(list.size).toBe(3);
+      expect(list.head?.next?.value).toBe(2);
+      expect(list.tail?.next).toBe(null);
+    });
+  });
 
   describe("Remove At", () => {});
 

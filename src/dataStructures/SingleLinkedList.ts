@@ -32,6 +32,52 @@ export default class SingleLinkedList<T = any> {
     return this.head?.value ?? null;
   }
 
+  add(value: T): void;
+  add(index: number, value: T): void;
+
+  // O(n)
+  add(indexOrValue: number | T, value?: T): void {
+    if (typeof indexOrValue === "number" && value !== undefined) {
+      this.addAtIndex(indexOrValue, value);
+    } else {
+      this.addLast(indexOrValue as T);
+    }
+  }
+
+  // O(n)
+  private addAtIndex(index: number, value: T): void {
+    if (index < 0 || index > this.size) {
+      throw new Error("Index out of bounds");
+    }
+
+    if (index === 0) {
+      this.addFirst(value);
+      return;
+    }
+
+    if (index === this.size) {
+      this.addLast(value);
+      return;
+    }
+
+    let current = this.head;
+    let previous = null;
+    let i = 0;
+
+    while (i < index) {
+      previous = current;
+      current = current?.next || null;
+      i++;
+    }
+
+    const newNode = new ListNode(value);
+    newNode.next = current;
+    if (previous) {
+      previous.next = newNode;
+    }
+    this.size++;
+  }
+
   // O(1)
   addFirst(value: T): void {
     const newNode = new ListNode(value);
