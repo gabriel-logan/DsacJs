@@ -13,7 +13,9 @@ class ListNode<T = any> {
 export default class DoublyLinkedList<T = any> {
   private readonly logger = new Logger();
 
+  private readonly head: ListNode<T> | null = null;
+
   constructor() {
-    this.logger.log("DoublyLinkedList created");
+    this.logger.log("DoublyLinkedList created" + this.head);
   }
 }
