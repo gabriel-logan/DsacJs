@@ -1,4 +1,4 @@
-const insertionSort = jest.fn();
+import insertionSort from "../../../src/Algorithms/sort/insertionSort";
 
 describe("insertionSort", () => {
   it("should sort an array in ascending order", () => {

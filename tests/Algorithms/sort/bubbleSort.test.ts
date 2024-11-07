@@ -1,4 +1,4 @@
-const bubbleSort = jest.fn();
+import bubbleSort from "../../../src/Algorithms/sort/bubbleSort";
 
 describe("bubbleSort", () => {
   it("should sort an array in ascending order", () => {

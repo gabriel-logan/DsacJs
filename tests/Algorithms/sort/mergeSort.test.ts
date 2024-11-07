@@ -1,4 +1,4 @@
-const mergeSort = jest.fn();
+import mergeSort from "../../../src/Algorithms/sort/mergeSort";
 
 describe("mergeSort", () => {
   it("should sort an array in ascending order", () => {

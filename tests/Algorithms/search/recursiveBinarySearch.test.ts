@@ -1,4 +1,4 @@
-const recursiveBinarySearch = jest.fn();
+import recursiveBinarySearch from "../../../src/Algorithms/search/recursiveBinarySearch";
 
 describe("recursiveBinarySearch", () => {
   it("should return the index of the target in an array", () => {

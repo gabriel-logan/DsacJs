@@ -1,4 +1,4 @@
-const factorial = jest.fn();
+import factorial from "../../../src/Algorithms/search/factorial";
 
 describe("factorial", () => {
   it("should return the factorial of a number", () => {

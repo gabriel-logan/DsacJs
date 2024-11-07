@@ -1,4 +1,4 @@
-const quickSort = jest.fn();
+import quickSort from "../../../src/Algorithms/sort/quickSort";
 
 describe("quickSort", () => {
   it("should sort an array in ascending order", () => {
