@@ -6,6 +6,7 @@ import bubbleSort from "./Algorithms/sort/bubbleSort";
 import insertionSort from "./Algorithms/sort/insertionSort";
 import mergeSort from "./Algorithms/sort/mergeSort";
 import quickSort from "./Algorithms/sort/quickSort";
+import Deque from "./dataStructures/Deque";
 import DoublyLinkedList from "./dataStructures/DoublyLinkedList";
 import Queue from "./dataStructures/Queue";
 import SingleLinkedList from "./dataStructures/SingleLinkedList";
@@ -26,4 +27,5 @@ export {
   insertionSort,
   mergeSort,
   quickSort,
+  Deque,
 };
