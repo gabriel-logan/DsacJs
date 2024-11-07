@@ -1,4 +1,4 @@
-import factorial from "../../../src/Algorithms/search/factorial";
+import factorial from "../../../src/Algorithms/math/factorial";
 
 describe("factorial", () => {
   it("should return the factorial of a number", () => {
@@ -17,5 +17,12 @@ describe("factorial", () => {
     const n = 1;
     const result = factorial(n);
     expect(result).toBe(1);
+  });
+
+  it("should throw an error for negative numbers", () => {
+    const n = -1;
+    expect(() => factorial(n)).toThrow(
+      "Factorial of negative number is not defined",
+    );
   });
 });

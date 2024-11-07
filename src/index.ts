@@ -1,5 +1,5 @@
+import factorial from "./Algorithms/math/factorial";
 import binarySearch from "./Algorithms/search/binarySearch";
-import factorial from "./Algorithms/search/factorial";
 import linearSearch from "./Algorithms/search/linearSearch";
 import recursiveBinarySearch from "./Algorithms/search/recursiveBinarySearch";
 import bubbleSort from "./Algorithms/sort/bubbleSort";
