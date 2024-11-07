@@ -1,18 +1,18 @@
-export default function binarySearch(arr: number[], target: number): number {
+export default function binarySearch<T = any>(arr: T[], target: T): number {
   let left = 0;
   let right = arr.length - 1;
 
   while (left <= right) {
-    const mid = Math.floor((left + right) / 2);
+    const middle = Math.floor((left + right) / 2);
 
-    if (arr[mid] === target) {
-      return mid;
+    if (arr[middle] === target) {
+      return middle;
     }
 
-    if (arr[mid] < target) {
-      left = mid + 1;
+    if (arr[middle] < target) {
+      left = middle + 1;
     } else {
-      right = mid - 1;
+      right = middle - 1;
     }
   }
 
