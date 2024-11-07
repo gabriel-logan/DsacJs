@@ -87,12 +87,12 @@ export default class SingleLinkedList<T = any> {
   addFirst(value: T): void {
     const newNode = new ListNode(value);
     if (this.isEmpty()) {
-      this.head = newNode;
       this.tail = newNode;
     } else {
       newNode.next = this.head;
-      this.head = newNode;
     }
+
+    this.head = newNode;
     this.size++;
   }
 
@@ -101,13 +101,11 @@ export default class SingleLinkedList<T = any> {
     const newNode = new ListNode(value);
     if (this.isEmpty()) {
       this.head = newNode;
-      this.tail = newNode;
-    } else {
-      if (this.tail) {
-        this.tail.next = newNode;
-      }
-      this.tail = newNode;
+    } else if (this.tail) {
+      this.tail.next = newNode;
     }
+
+    this.tail = newNode;
     this.size++;
   }
 
