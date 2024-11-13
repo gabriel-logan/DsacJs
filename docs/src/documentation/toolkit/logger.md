@@ -5,15 +5,15 @@ The logger is a simple logging utility that can be used to log messages to the c
 ## Usage
 
 ```js
-import { Logger } from 'dsacjs';
+import { Logger } from "dsacjs";
 
-const logger = new Logger('MyLogger');
+const logger = new Logger("MyLogger");
 
-logger.log('This is a log message');
+logger.log("This is a log message");
 
-logger.info('This is an info message');
+logger.info("This is an info message");
 
-logger.warn('This is a warning message');
+logger.warn("This is a warning message");
 
-logger.error('This is an error message');
+logger.error("This is an error message");
 ```

@@ -2,7 +2,7 @@
 
 The factorial of a non-negative integer n is the product of all positive integers less than or equal to n. The factorial of n is denoted by n! and is defined as:
 
-n! = n * (n-1) * (n-2) * ... * 1
+n! = n _ (n-1) _ (n-2) _ ... _ 1
 
 The factorial of 0 is defined to be 1.
 

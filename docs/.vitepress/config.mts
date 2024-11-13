@@ -1,6 +1,6 @@
-import { defineConfigWithTheme } from "vitepress"
-import type { ThemeConfig } from "vitepress-carbon"
-import baseConfig from "vitepress-carbon/config"
+import { defineConfigWithTheme } from "vitepress";
+import type { ThemeConfig } from "vitepress-carbon";
+import baseConfig from "vitepress-carbon/config";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfigWithTheme<ThemeConfig>({
@@ -20,16 +20,16 @@ export default defineConfigWithTheme<ThemeConfig>({
     ],
 
     search: {
-      provider: "local"
+      provider: "local",
     },
-    
+
     sidebar: [
       {
         text: "Guide",
         items: [
           { text: "Introduction", link: "/guide/introduction" },
-          { text: "Getting Started", link: "/guide/getting-started" }
-        ]
+          { text: "Getting Started", link: "/guide/getting-started" },
+        ],
       },
       {
         text: "Documentation",
@@ -38,11 +38,17 @@ export default defineConfigWithTheme<ThemeConfig>({
             text: "Data Structures",
             items: [
               { text: "Deque", link: "/documentation/data-structures/deque" },
-              { text: "LinkedList", link: "/documentation/data-structures/linkedlist" },
+              {
+                text: "LinkedList",
+                link: "/documentation/data-structures/linkedlist",
+              },
               { text: "Queue", link: "/documentation/data-structures/queue" },
-              { text: "SingleLinkedList", link: "/documentation/data-structures/singlelinkedlist" },
+              {
+                text: "SingleLinkedList",
+                link: "/documentation/data-structures/singlelinkedlist",
+              },
               { text: "Stack", link: "/documentation/data-structures/stack" },
-            ]
+            ],
           },
           {
             text: "Algorithms",
@@ -50,47 +56,75 @@ export default defineConfigWithTheme<ThemeConfig>({
               {
                 text: "Math",
                 items: [
-                  { text: "Factorial", link: "/documentation/algorithms/math/factorial" },
-                ]
+                  {
+                    text: "Factorial",
+                    link: "/documentation/algorithms/math/factorial",
+                  },
+                ],
               },
               {
                 text: "Search",
                 items: [
-                  { text: "Binary Search", link: "/documentation/algorithms/search/binary-search" },
-                  { text: "Linear Search", link: "/documentation/algorithms/search/linear-search" },
-                  { text: "Recursive Binary Search", link: "/documentation/algorithms/search/recursive-binary-search" }
-                ]
+                  {
+                    text: "Binary Search",
+                    link: "/documentation/algorithms/search/binary-search",
+                  },
+                  {
+                    text: "Linear Search",
+                    link: "/documentation/algorithms/search/linear-search",
+                  },
+                  {
+                    text: "Recursive Binary Search",
+                    link: "/documentation/algorithms/search/recursive-binary-search",
+                  },
+                ],
               },
               {
                 text: "Sort",
                 items: [
-                  { text: "Bubble Sort", link: "/documentation/algorithms/sort/bubble-sort" },
-                  { text: "Insertion Sort", link: "/documentation/algorithms/sort/insertion-sort" },
-                  { text: "Merge Sort", link: "/documentation/algorithms/sort/merge-sort" },
-                  { text: "Quick Sort", link: "/documentation/algorithms/sort/quick-sort" }
-                ]
-              }
-            ]
+                  {
+                    text: "Bubble Sort",
+                    link: "/documentation/algorithms/sort/bubble-sort",
+                  },
+                  {
+                    text: "Insertion Sort",
+                    link: "/documentation/algorithms/sort/insertion-sort",
+                  },
+                  {
+                    text: "Merge Sort",
+                    link: "/documentation/algorithms/sort/merge-sort",
+                  },
+                  {
+                    text: "Quick Sort",
+                    link: "/documentation/algorithms/sort/quick-sort",
+                  },
+                ],
+              },
+            ],
           },
           {
             text: "Toolkit",
-            items: [
-              { text: "Logger", link: "/documentation/toolkit/logger" },
-            ]
-          }
-        ]
+            items: [{ text: "Logger", link: "/documentation/toolkit/logger" }],
+          },
+        ],
       },
       {
         text: "Others",
         items: [
-          { text: "Contributing", link: "https://github.com/gabriel-logan/DsacJs/blob/main/CONTRIBUTING.md" },
-          { text: "License", link: "https://github.com/gabriel-logan/DsacJs/blob/main/LICENSE" }
-        ]
-      }
+          {
+            text: "Contributing",
+            link: "https://github.com/gabriel-logan/DsacJs/blob/main/CONTRIBUTING.md",
+          },
+          {
+            text: "License",
+            link: "https://github.com/gabriel-logan/DsacJs/blob/main/LICENSE",
+          },
+        ],
+      },
     ],
 
     socialLinks: [
-      { icon: "github", link: "https://github.com/gabriel-logan/DsacJs" }
-    ]
-  }
-})
+      { icon: "github", link: "https://github.com/gabriel-logan/DsacJs" },
+    ],
+  },
+});
