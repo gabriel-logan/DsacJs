@@ -10,6 +10,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   srcDir: "src",
   //base: "/vitepress-carbon-template/", if running on github-pages, set repository name here
   base: "/DsacJs/",
+  cleanUrls: true,
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -28,6 +29,13 @@ export default defineConfigWithTheme<ThemeConfig>({
         items: [
           { text: "Introduction", link: "/guide/introduction" },
           { text: "Getting Started", link: "/guide/getting-started" }
+        ]
+      },
+      {
+        text: "Others",
+        items: [
+          { text: "Contributing", link: "https://github.com/gabriel-logan/DsacJs/blob/main/CONTRIBUTING.md" },
+          { text: "License", link: "https://github.com/gabriel-logan/DsacJs/blob/main/LICENSE" }
         ]
       }
     ],

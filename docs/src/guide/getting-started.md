@@ -1,49 +1,34 @@
----
-outline: deep
----
+# Getting Started
 
-# Runtime API Examples
+## Installation
 
-This page demonstrates usage of some of the runtime APIs provided by VitePress.
+To install DsacJs
 
-The main `useData()` API can be used to access site, theme, and page data for the current page. It works in both `.md` and `.vue` files:
-
-```md
-<script setup>
-import { useData } from 'vitepress'
-
-const { theme, page, frontmatter } = useData()
-</script>
-
-## Results
-
-### Theme Data
-<pre>{{ theme }}</pre>
-
-### Page Data
-<pre>{{ page }}</pre>
-
-### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
+```bash
+npm install dsacjs
+```
+```bash
+yarn add dsacjs
+```
+```bash
+pnpm add dsacjs
+```
+```bash
+bun add dsacjs
 ```
 
-<script setup>
-import { useData } from 'vitepress'
+## Usage
 
-const { site, theme, page, frontmatter } = useData()
-</script>
+Here's an example of how you can use DsacJs to create a simple stack data structure:
 
-## Results
+```typescript
+import { Stack } from 'dsacjs';
 
-### Theme Data
-<pre>{{ theme }}</pre>
+const stack = new Stack<number>();
 
-### Page Data
-<pre>{{ page }}</pre>
+stack.push(1);
+stack.push(2);
+stack.push(3);
 
-### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
-
-## More
-
-Check out the documentation for the [full list of runtime APIs](https://vitepress.dev/reference/runtime-api#usedata).
+console.log(stack.pop()); // 3
+```
