@@ -5,7 +5,7 @@ import baseConfig from "vitepress-carbon/config"
 // https://vitepress.dev/reference/site-config
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
-  title: "DsacJs",
+  title: "🛠️ DsacJs",
   description: "Data Structures - Algorithm - Toolkit Collection",
   srcDir: "src",
   //base: "/vitepress-carbon-template/", if running on github-pages, set repository name here
@@ -15,7 +15,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "Home", link: "/" },
-      { text: "Examples", link: "/markdown-examples" },
+      { text: "Guide", link: "/guide/introduction" },
     ],
 
     search: {
@@ -24,10 +24,10 @@ export default defineConfigWithTheme<ThemeConfig>({
     
     sidebar: [
       {
-        text: "Examples",
+        text: "Guide",
         items: [
-          { text: "Markdown Examples", link: "/markdown-examples" },
-          { text: "Runtime API Examples", link: "/api-examples" }
+          { text: "Introduction", link: "/guide/introduction" },
+          { text: "Getting Started", link: "/guide/getting-started" }
         ]
       }
     ],

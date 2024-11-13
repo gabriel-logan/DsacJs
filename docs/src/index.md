@@ -11,11 +11,11 @@ hero:
     alt: Banner
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Introduction
+      link: /guide/introduction
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: View on GitHub
+      link: "https://github.com/gabriel-logan/DsacJs"
 
 features:
   - title: Feature A
