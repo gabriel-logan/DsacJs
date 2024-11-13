@@ -5,8 +5,8 @@ import baseConfig from 'vitepress-carbon/config'
 // https://vitepress.dev/reference/site-config
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
-  title: "My Awesome Project",
-  description: "A VitePress Site",
+  title: "DsacJs",
+  description: "Data Structures - Algorithm - Toolkit Collection",
   srcDir: 'src',
   //base: '/vitepress-carbon-template/', if running on github-pages, set repository name here
 
@@ -14,7 +14,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Examples', link: '/markdown-examples' },
     ],
 
     search: {
@@ -32,7 +32,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/brenoepics/vitepress-carbon' }
+      { icon: 'github', link: 'https://github.com/gabriel-logan/DsacJs' }
     ]
   }
 })

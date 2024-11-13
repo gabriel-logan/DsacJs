@@ -1,11 +1,10 @@
 ---
-# https://brenoepics.github.io/vitepress-carbon/guide/home-component.html
 layout: home
 
 hero:
-  name: "My Awesome Project"
+  name: "DsacJs"
   text: "A VitePress Site"
-  tagline: My great project tagline
+  tagline: "Data Structures - Algorithm - Toolkit Collection"
   icon: 🛠️
   image:
     src: ./bg.svg
