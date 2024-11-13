@@ -16,7 +16,7 @@ module.exports = {
     jest: true,
   },
   root: true,
-  ignorePatterns: [".eslintrc.*", "jest.config.js", "dist/*", "types/*"],
+  ignorePatterns: [".eslintrc.*", "jest.config.js", "dist/*", "types/*", "docs/*"],
   rules: {
     "no-console": "warn",
     "@typescript-eslint/no-explicit-any": "off",
