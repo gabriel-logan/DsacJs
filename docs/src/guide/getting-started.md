@@ -4,21 +4,25 @@
 
 To install DsacJs
 
-```bash
+::: code-group
+
+```bash [npm]
 npm install dsacjs
 ```
 
-```bash
+```bash [yarn]
 yarn add dsacjs
 ```
 
-```bash
+```bash [pnpm]
 pnpm add dsacjs
 ```
 
-```bash
+```bash [bun]
 bun add dsacjs
 ```
+
+:::
 
 ## Usage
 
