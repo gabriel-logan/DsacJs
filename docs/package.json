@@ -1,7 +1,7 @@
 {
-  "name": "vitepress-carbon-template",
+  "name": "dsacjs-docs",
   "version": "0.0.1",
-  "description": "VitePress Carbon Template",
+  "description": "DsacJs documentation",
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",

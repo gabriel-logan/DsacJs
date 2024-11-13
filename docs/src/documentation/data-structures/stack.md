@@ -1,0 +1,21 @@
+# Stack
+
+Stack is a linear data structure which follows a particular order in which the operations are performed. The order may be LIFO(Last In First Out) or FILO(First In Last Out).
+
+## Usage
+
+```js
+import { Stack } from "dsacjs";
+
+const stack = new Stack();
+
+stack.push(1);
+
+stack.push(2);
+
+console.log(stack.top()); // 2
+
+stack.pop();
+
+console.log(stack.top()); // 1
+```
