@@ -36,8 +36,8 @@ jobs:
         working-directory: docs
         run: |
           yarn build
-          mkdir staging
-          cp .vitepress/dist/* ../staging -r
+          mkdir -p ../staging
+          cp -r .vitepress/dist/* ../staging
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
