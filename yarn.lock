@@ -3925,6 +3925,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dsacjs-docs@workspace:docs":
+  version: 0.0.0-use.local
+  resolution: "dsacjs-docs@workspace:docs"
+  dependencies:
+    vitepress: "npm:^1.4.0"
+    vitepress-carbon: "npm:^1.5.0"
+  languageName: unknown
+  linkType: soft
+
 "dsacjs@workspace:.":
   version: 0.0.0-use.local
   resolution: "dsacjs@workspace:."
@@ -8012,15 +8021,6 @@ __metadata:
   checksum: 10c0/d536bb7af57dd0eca2a808f95f5ff1d7b7ffb8d86e17c6893087680a0448bd0d15e07475270c8a6de65cb5115592d037130a1dd979dc76bcef8c1dda202a1874
   languageName: node
   linkType: hard
-
-"vitepress-carbon-template@workspace:docs":
-  version: 0.0.0-use.local
-  resolution: "vitepress-carbon-template@workspace:docs"
-  dependencies:
-    vitepress: "npm:^1.4.0"
-    vitepress-carbon: "npm:^1.5.0"
-  languageName: unknown
-  linkType: soft
 
 "vitepress-carbon@npm:^1.5.0":
   version: 1.5.0
