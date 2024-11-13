@@ -29,3 +29,15 @@ If you'd like to contribute to DsacJs, please read our [contributing guidelines]
 ## License
 
 DsacJs is [MIT licensed](https://github.com/gabriel-logan/DsacJs/blob/main/LICENSE)
+
+## Author
+
+Gabriel Logan
+
+## Acknowledgements
+
+This project was inspired by the [Java Collections Framework](https://docs.oracle.com/javase/8/docs/technotes/guides/collections/overview.html)
+
+## Contributors
+
+Thanks to all the contributors who have helped make DsacJs better!
