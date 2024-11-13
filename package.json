@@ -8,6 +8,9 @@
     "dist",
     "types"
   ],
+  "workspaces": [
+    "docs"
+  ],
   "scripts": {
     "test": "jest --verbose",
     "test:watch": "jest --watch",
