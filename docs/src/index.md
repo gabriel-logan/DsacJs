@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: "DsacJs"
-  text: "A VitePress Site"
+  text: "TS/JS Library"
   tagline: "Data Structures - Algorithm - Toolkit Collection"
   icon: 🛠️
   image:
@@ -18,10 +18,24 @@ hero:
       link: "https://github.com/gabriel-logan/DsacJs"
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 📇 Algorithm
+    details: Various functions with ready-to-use algorithms, in an easy way.
+    link: /documentation/algorithms/
+
+  - title: 📈 Data Structures
+    details: A collection of data structures, with a simple and easy-to-use API.
+    link: /documentation/data-structures/
+    
+  - title: ℹ️ Toolkit
+    details: A set of tools to help you in your daily tasks.
+    link: /documentation/toolkit/
+
+
+footer:
+  text: "Made with ❤️ by Gabriel Logan"
+  actions:
+    - text: "GitHub"
+      link: "https://github.com/gabriel-logan/DsacJs"
+    - text: "NPM"
+      link: "https://www.npmjs.com/package/dsacjs"
 ---

@@ -18,6 +18,14 @@ A high-performance JavaScript and TypeScript library offering a comprehensive se
 
 - **Modular Design**: Each data structure is implemented as a separate module, allowing you to import only what you need.
 
+- **Well Documented**: Comprehensive documentation and examples to help you get started quickly.
+
+- **Open Source**: DsacJs is open source and available under the MIT license.
+
+- **Supports Node.js and Browsers**: Works in both Node.js and browser environments.
+
+- **Supoorts ES6 Modules and CommonJS**: Supports both ES6 modules and CommonJS module systems.
+
 ## Documentation
 
 For more information on how to use DsacJs, check out the [documentation](https://gabriel-logan.github.io/DsacJs/guide/introduction.html).
