@@ -65,7 +65,7 @@ console.log(deque.toArray()); // [2]
 
 - `clear()`: O(1)
 - `isEmpty()`: O(1)
-- `peekBack()`: O(1) 
+- `peekBack()`: O(1)
 - `peekFront()`: O(1)
 - `popBack()`: O(1)
 - `popFront()`: O(1)

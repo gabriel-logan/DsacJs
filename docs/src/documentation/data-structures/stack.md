@@ -2,24 +2,26 @@
 
 Stack is a linear data structure which follows a particular order in which the operations are performed. The order may be LIFO(Last In First Out) or FILO(First In Last Out).
 
-## Methods
+## Class
 
 - `Stack()` - creates a new stack that is empty.
 
-- `push(item)` - adds a new item to the top of the stack.
-- `pop()` - removes the top item from the stack.
-- `peek()` - returns the top item from the stack but does not remove it.
-- `isEmpty()` - tests to see whether the stack is empty.
-- `size()` - returns the number of items on the stack.
-- `print()` - prints the stack.
+## Methods
+
 - `clear()` - clears the stack.
+- `isEmpty()` - tests to see whether the stack is empty.
+- `peek()` - returns the top item from the stack but does not remove it.
+- `pop()` - removes the top item from the stack.
+- `print()` - prints the stack.
+- `push(item)` - adds a new item to the top of the stack.
+- `size()` - returns the number of items on the stack.
 
 ## Usage
 
-```js
+```ts
 import { Stack } from "dsacjs";
 
-const stack = new Stack();
+const stack = new Stack<number>();
 
 stack.push(1);
 stack.push(2);
