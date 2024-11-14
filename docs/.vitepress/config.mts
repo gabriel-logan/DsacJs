@@ -37,23 +37,6 @@ export default defineConfigWithTheme<ThemeConfig>({
         link: "/documentation",
         items: [
           {
-            text: "Data Structures",
-            link: "/documentation/data-structures",
-            items: [
-              { text: "Deque", link: "/documentation/data-structures/deque" },
-              {
-                text: "LinkedList",
-                link: "/documentation/data-structures/linkedlist",
-              },
-              { text: "Queue", link: "/documentation/data-structures/queue" },
-              {
-                text: "SingleLinkedList",
-                link: "/documentation/data-structures/singlelinkedlist",
-              },
-              { text: "Stack", link: "/documentation/data-structures/stack" },
-            ],
-          },
-          {
             text: "Algorithms",
             link: "/documentation/algorithms",
             items: [
@@ -107,6 +90,23 @@ export default defineConfigWithTheme<ThemeConfig>({
             ],
           },
           {
+            text: "Data Structures",
+            link: "/documentation/data-structures",
+            items: [
+              { text: "Deque", link: "/documentation/data-structures/deque" },
+              {
+                text: "LinkedList",
+                link: "/documentation/data-structures/linkedlist",
+              },
+              { text: "Queue", link: "/documentation/data-structures/queue" },
+              {
+                text: "SingleLinkedList",
+                link: "/documentation/data-structures/singlelinkedlist",
+              },
+              { text: "Stack", link: "/documentation/data-structures/stack" },
+            ],
+          },
+          {
             text: "Toolkit",
             link: "/documentation/toolkit",
             items: [{ text: "Logger", link: "/documentation/toolkit/logger" }],
@@ -130,6 +130,7 @@ export default defineConfigWithTheme<ThemeConfig>({
 
     socialLinks: [
       { icon: "github", link: "https://github.com/gabriel-logan/DsacJs" },
+      { icon: "npm", link: "https://www.npmjs.com/package/dsacjs" },
     ],
   },
 });

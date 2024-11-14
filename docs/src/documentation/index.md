@@ -4,6 +4,6 @@ This is the documentation for the project.
 
 ## Avaliable Documentation
 
-- [Data Structures](data-structures.md)
 - [Algorithms](algorithms.md)
+- [Data Structures](data-structures.md)
 - [Toolkit](toolkit.md)
