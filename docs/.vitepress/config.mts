@@ -11,6 +11,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   //base: "/vitepress-carbon-template/", if running on github-pages, set repository name here
   base: "/DsacJs/",
   cleanUrls: true,
+  ignoreDeadLinks: true,
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
