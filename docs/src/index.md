@@ -25,11 +25,10 @@ features:
   - title: 📈 Data Structures
     details: A collection of data structures, with a simple and easy-to-use API.
     link: /documentation/data-structures/
-    
+
   - title: ℹ️ Toolkit
     details: A set of tools to help you in your daily tasks.
     link: /documentation/toolkit/
-
 
 footer:
   text: "Made with ❤️ by Gabriel Logan"
