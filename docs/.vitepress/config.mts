@@ -38,6 +38,7 @@ export default defineConfigWithTheme<ThemeConfig>({
         items: [
           {
             text: "Data Structures",
+            link: "/documentation/data-structures",
             items: [
               { text: "Deque", link: "/documentation/data-structures/deque" },
               {
@@ -54,6 +55,7 @@ export default defineConfigWithTheme<ThemeConfig>({
           },
           {
             text: "Algorithms",
+            link: "/documentation/algorithms",
             items: [
               {
                 text: "Math",
@@ -106,6 +108,7 @@ export default defineConfigWithTheme<ThemeConfig>({
           },
           {
             text: "Toolkit",
+            link: "/documentation/toolkit",
             items: [{ text: "Logger", link: "/documentation/toolkit/logger" }],
           },
         ],
