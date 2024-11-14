@@ -7,7 +7,7 @@ hero:
   tagline: "Data Structures - Algorithm - Toolkit Collection"
   icon: 🛠️
   image:
-    src: ./bg.svg
+    src: ./logo-transparent.png
     alt: Banner
   actions:
     - theme: brand
