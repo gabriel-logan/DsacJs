@@ -33,6 +33,7 @@ export default defineConfigWithTheme<ThemeConfig>({
       },
       {
         text: "Documentation",
+        link: "/documentation",
         items: [
           {
             text: "Data Structures",
