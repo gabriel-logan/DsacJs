@@ -1,4 +1,4 @@
-import linearSearch from "../../../src/Algorithms/search/linearSearch";
+import linearSearch from "../../../src/algorithms/search/linearSearch";
 
 describe("linearSearch", () => {
   it("should return the index of the target in an array", () => {

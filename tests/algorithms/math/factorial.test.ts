@@ -1,4 +1,4 @@
-import factorial from "../../../src/Algorithms/math/factorial";
+import factorial from "../../../src/algorithms/math/factorial";
 
 describe("factorial", () => {
   it("should return the factorial of a number", () => {
