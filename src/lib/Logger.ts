@@ -3,63 +3,72 @@
 export default class Logger {
   private readonly prefix: string | undefined;
 
+  private readonly colors = {
+    log: "\x1b[32m", // Green
+    error: "\x1b[31m", // Red
+    warn: "\x1b[33m", // Yellow
+    info: "\x1b[34m", // Blue
+    debug: "\x1b[35m", // Magenta
+    reset: "\x1b[0m", // Reset
+  };
+
   constructor(prefix?: string) {
     this.prefix = prefix;
   }
 
   log(data: any): void {
     if (this.prefix) {
-      console.log(`[${this.prefix}] ${data}`);
+      console.log(`[LOG] [${this.prefix}] ${data}`);
     } else {
-      console.log(data);
+      console.log(`[LOG] ${data}`);
     }
   }
 
   error(data: any): void {
     if (this.prefix) {
-      console.error(`[${this.prefix}] ${data}`);
+      console.error(`[ERROR] [${this.prefix}] ${data}`);
     } else {
-      console.error(data);
+      console.error(`[ERROR] ${data}`);
     }
   }
 
   warn(data: any): void {
     if (this.prefix) {
-      console.warn(`[${this.prefix}] ${data}`);
+      console.warn(`[WARN] [${this.prefix}] ${data}`);
     } else {
-      console.warn(data);
+      console.warn(`[WARN] ${data}`);
     }
   }
 
   info(data: any): void {
     if (this.prefix) {
-      console.info(`[${this.prefix}] ${data}`);
+      console.info(`[INFO] [${this.prefix}] ${data}`);
     } else {
-      console.info(data);
+      console.info(`[INFO] ${data}`);
     }
   }
 
   debug(data: any): void {
     if (this.prefix) {
-      console.debug(`[${this.prefix}] ${data}`);
+      console.debug(`[DEBUG] [${this.prefix}] ${data}`);
     } else {
-      console.debug(data);
+      console.debug(`[DEBUG] ${data}`);
     }
   }
 
   trace(data: any): void {
     if (this.prefix) {
-      console.trace(`[${this.prefix}] ${data}`);
+      console.trace(`[TRACE] [${this.prefix}] ${data}`);
     } else {
-      console.trace(data);
+      console.trace(`[TRACE] ${data}`);
     }
   }
 
   group(data: any): void {
     if (this.prefix) {
-      console.group(`[${this.prefix}] ${data}`);
+      console.group(`[GROUP] [${this.prefix}] ${data}`);
     } else {
-      console.group(data);
+      console.group(`[GROUP] ${data}`);
     }
   }
 

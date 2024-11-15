@@ -12,7 +12,7 @@ describe("Logger", () => {
       logger.log("Hello, World!");
 
       expect(logger.log).toBeInstanceOf(Function);
-      expect(spyConsoleLog).toHaveBeenCalledWith("Hello, World!");
+      expect(spyConsoleLog).toHaveBeenCalledWith("[LOG] Hello, World!");
     });
 
     it("should log a message with prefix", () => {
@@ -25,7 +25,7 @@ describe("Logger", () => {
       logger.log("Hello, World!");
 
       expect(logger.log).toBeInstanceOf(Function);
-      expect(spyConsoleLog).toHaveBeenCalledWith("[Log] Hello, World!");
+      expect(spyConsoleLog).toHaveBeenCalledWith("[LOG] [Log] Hello, World!");
     });
   });
 
@@ -40,7 +40,7 @@ describe("Logger", () => {
       logger.error("Hello, World!");
 
       expect(logger.error).toBeInstanceOf(Function);
-      expect(spyConsoleError).toHaveBeenCalledWith("Hello, World!");
+      expect(spyConsoleError).toHaveBeenCalledWith("[ERROR] Hello, World!");
     });
 
     it("should log an error with prefix", () => {
@@ -53,7 +53,9 @@ describe("Logger", () => {
       logger.error("Hello, World!");
 
       expect(logger.error).toBeInstanceOf(Function);
-      expect(spyConsoleError).toHaveBeenCalledWith("[Error] Hello, World!");
+      expect(spyConsoleError).toHaveBeenCalledWith(
+        "[ERROR] [Error] Hello, World!",
+      );
     });
   });
 
@@ -68,7 +70,7 @@ describe("Logger", () => {
       logger.warn("Hello, World!");
 
       expect(logger.warn).toBeInstanceOf(Function);
-      expect(spyConsoleWarn).toHaveBeenCalledWith("Hello, World!");
+      expect(spyConsoleWarn).toHaveBeenCalledWith("[WARN] Hello, World!");
     });
 
     it("should log a warning with prefix", () => {
@@ -81,7 +83,9 @@ describe("Logger", () => {
       logger.warn("Hello, World!");
 
       expect(logger.warn).toBeInstanceOf(Function);
-      expect(spyConsoleWarn).toHaveBeenCalledWith("[Warn] Hello, World!");
+      expect(spyConsoleWarn).toHaveBeenCalledWith(
+        "[WARN] [Warn] Hello, World!",
+      );
     });
   });
 
@@ -96,7 +100,7 @@ describe("Logger", () => {
       logger.info("Hello, World!");
 
       expect(logger.info).toBeInstanceOf(Function);
-      expect(spyConsoleInfo).toHaveBeenCalledWith("Hello, World!");
+      expect(spyConsoleInfo).toHaveBeenCalledWith("[INFO] Hello, World!");
     });
 
     it("should log an info message with prefix", () => {
@@ -109,7 +113,9 @@ describe("Logger", () => {
       logger.info("Hello, World!");
 
       expect(logger.info).toBeInstanceOf(Function);
-      expect(spyConsoleInfo).toHaveBeenCalledWith("[Info] Hello, World!");
+      expect(spyConsoleInfo).toHaveBeenCalledWith(
+        "[INFO] [Info] Hello, World!",
+      );
     });
   });
 
@@ -124,7 +130,7 @@ describe("Logger", () => {
       logger.debug("Hello, World!");
 
       expect(logger.debug).toBeInstanceOf(Function);
-      expect(spyConsoleDebug).toHaveBeenCalledWith("Hello, World!");
+      expect(spyConsoleDebug).toHaveBeenCalledWith("[DEBUG] Hello, World!");
     });
 
     it("should log a debug message with prefix", () => {
@@ -137,7 +143,9 @@ describe("Logger", () => {
       logger.debug("Hello, World!");
 
       expect(logger.debug).toBeInstanceOf(Function);
-      expect(spyConsoleDebug).toHaveBeenCalledWith("[Debug] Hello, World!");
+      expect(spyConsoleDebug).toHaveBeenCalledWith(
+        "[DEBUG] [Debug] Hello, World!",
+      );
     });
   });
 
@@ -152,7 +160,7 @@ describe("Logger", () => {
       logger.trace("Hello, World!");
 
       expect(logger.trace).toBeInstanceOf(Function);
-      expect(spyConsoleTrace).toHaveBeenCalledWith("Hello, World!");
+      expect(spyConsoleTrace).toHaveBeenCalledWith("[TRACE] Hello, World!");
     });
 
     it("should log a trace message with prefix", () => {
@@ -165,7 +173,9 @@ describe("Logger", () => {
       logger.trace("Hello, World!");
 
       expect(logger.trace).toBeInstanceOf(Function);
-      expect(spyConsoleTrace).toHaveBeenCalledWith("[Trace] Hello, World!");
+      expect(spyConsoleTrace).toHaveBeenCalledWith(
+        "[TRACE] [Trace] Hello, World!",
+      );
     });
   });
 
@@ -180,7 +190,7 @@ describe("Logger", () => {
       logger.group("Hello, World!");
 
       expect(logger.group).toBeInstanceOf(Function);
-      expect(spyConsoleGroup).toHaveBeenCalledWith("Hello, World!");
+      expect(spyConsoleGroup).toHaveBeenCalledWith("[GROUP] Hello, World!");
     });
 
     it("should log a group message with prefix", () => {
@@ -193,7 +203,9 @@ describe("Logger", () => {
       logger.group("Hello, World!");
 
       expect(logger.group).toBeInstanceOf(Function);
-      expect(spyConsoleGroup).toHaveBeenCalledWith("[Group] Hello, World!");
+      expect(spyConsoleGroup).toHaveBeenCalledWith(
+        "[GROUP] [Group] Hello, World!",
+      );
     });
   });
 
