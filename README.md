@@ -15,6 +15,22 @@ A high-performance JavaScript and TypeScript library offering a comprehensive se
 - [Website Documentation](https://gabriel-logan.github.io/DsacJs/)
 - [NPM Package](https://www.npmjs.com/package/dsacjs)
 
+## CDN
+
+```html
+<script type="module">
+  import { LinkedList } from "https://cdn.jsdelivr.net/npm/dsacjs@0.0.1/+esm";
+
+  const linkedList = new LinkedList();
+
+  linkedList.add(1);
+  linkedList.add(2);
+  linkedList.add(3);
+
+  console.log(linkedList.toArray());
+</script>
+```
+
 ## Installation
 
 ```bash
