@@ -7,6 +7,12 @@ describe("factorial", () => {
     expect(result).toBe(120);
   });
 
+  it("should return the factorial of number < 1", () => {
+    const n = 0.5;
+    const result = factorial(n);
+    expect(result).toBeCloseTo(0.886226925);
+  });
+
   it("should return the factorial of 10", () => {
     const n = 10;
     const result = factorial(n);

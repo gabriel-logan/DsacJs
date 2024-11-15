@@ -31,10 +31,6 @@ function factorialOfFloat(n: number): number {
 function gamma(n: number): number {
   const g = 7;
 
-  if (n < 0.5) {
-    return Math.PI / (Math.sin(Math.PI * n) * gamma(1 - n));
-  }
-
   n -= 1;
 
   const a = [
