@@ -18,6 +18,7 @@ export {
   Stack,
   Queue,
   DoublyLinkedList as LinkedList,
+  Deque,
   Logger,
   binarySearch,
   factorial,
@@ -27,5 +28,4 @@ export {
   insertionSort,
   mergeSort,
   quickSort,
-  Deque,
 };
