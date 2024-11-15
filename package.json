@@ -1,6 +1,6 @@
 {
   "name": "dsacjs",
-  "version": "0.0.4-test",
+  "version": "0.0.1",
   "description": "A high-performance JavaScript and TypeScript library offering a comprehensive set of efficient data structures. Simplify your algorithm implementation and data manipulation with optimized, easy-to-use tools.",
   "main": "./dist/index.js",
   "types": "./types/index.d.ts",
