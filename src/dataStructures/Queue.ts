@@ -7,31 +7,31 @@ export default class Queue<T = any> {
     this.list = new SingleLinkedList();
   }
 
-  enqueue(value: T): void {
-    return this.list.addLast(value);
+  clear(): void {
+    this.list.clear();
   }
 
   dequeue(): T | null {
     return this.list.removeFirst();
   }
 
-  peek(): T | null {
-    return this.list.peek();
+  enqueue(value: T): void {
+    return this.list.addLast(value);
   }
 
   isEmpty(): boolean {
     return this.list.isEmpty();
   }
 
-  size(): number {
-    return this.list.size;
+  peek(): T | null {
+    return this.list.peek();
   }
 
   print(): void {
     return this.list.print();
   }
 
-  clear(): void {
-    this.list.clear();
+  size(): number {
+    return this.list.size;
   }
 }

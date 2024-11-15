@@ -7,31 +7,31 @@ export default class Stack<T = any> {
     this.list = new SingleLinkedList();
   }
 
-  push(value: T): void {
-    return this.list.addFirst(value);
-  }
-
-  pop(): T | null {
-    return this.list.removeFirst();
-  }
-
-  peek(): T | null {
-    return this.list.peek();
+  clear(): void {
+    this.list.clear();
   }
 
   isEmpty(): boolean {
     return this.list.isEmpty();
   }
 
-  size(): number {
-    return this.list.size;
+  peek(): T | null {
+    return this.list.peek();
+  }
+
+  pop(): T | null {
+    return this.list.removeFirst();
   }
 
   print(): void {
     return this.list.printReverse();
   }
 
-  clear(): void {
-    this.list.clear();
+  push(value: T): void {
+    return this.list.addFirst(value);
+  }
+
+  size(): number {
+    return this.list.size;
   }
 }

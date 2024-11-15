@@ -7,44 +7,12 @@ export default class Deque<T = any> {
     this.list = new DoublyLinkedList();
   }
 
-  pushFront(value: T): void {
-    this.list.addFirst(value);
-  }
-
-  pushBack(value: T): void {
-    this.list.addLast(value);
-  }
-
-  popFront(): T | null {
-    return this.list.removeFirst();
-  }
-
-  popBack(): T | null {
-    return this.list.removeLast();
-  }
-
-  peekFront(): T | null {
-    return this.list.peek();
-  }
-
-  peekBack(): T | null {
-    return this.list.getLast();
-  }
-
-  isEmpty(): boolean {
-    return this.list.isEmpty();
-  }
-
-  size(): number {
-    return this.list.size;
-  }
-
   clear(): void {
     this.list.clear();
   }
 
-  toArray(): T[] {
-    return this.list.toArray();
+  isEmpty(): boolean {
+    return this.list.isEmpty();
   }
 
   iterator(): IterableIterator<T> {
@@ -55,7 +23,39 @@ export default class Deque<T = any> {
     return this.iterator();
   }
 
+  peekBack(): T | null {
+    return this.list.getLast();
+  }
+
+  peekFront(): T | null {
+    return this.list.peek();
+  }
+
+  popBack(): T | null {
+    return this.list.removeLast();
+  }
+
+  popFront(): T | null {
+    return this.list.removeFirst();
+  }
+
   print(): void {
     return this.list.print();
+  }
+
+  pushBack(value: T): void {
+    this.list.addLast(value);
+  }
+
+  pushFront(value: T): void {
+    this.list.addFirst(value);
+  }
+
+  size(): number {
+    return this.list.size;
+  }
+
+  toArray(): T[] {
+    return this.list.toArray();
   }
 }

@@ -13,8 +13,6 @@ A singly linked list is a linked data structure that consists of a set of sequen
 - `addLast(value)`: adds an element to the end of the linked list.
 - `add(index, value)`: adds an element at the specified index in the linked list.
 - `clear()`: removes all elements from the linked list.
-- `contains(value)`: returns `true` if the linked list contains the specified element, `false` otherwise.
-- `get(index)`: returns the element at the specified index in the linked list without removing it.
 - `getFirst()`: returns the element at the beginning of the linked list without removing it.
 - `getLast()`: returns the element at the end of the linked list without removing it.
 - `indexOf(value)`: returns the index of the first occurrence of the specified element in the linked list, or -1 if the linked list does not contain the element.

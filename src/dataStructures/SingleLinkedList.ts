@@ -13,42 +13,6 @@ class ListNode<T = any> {
 export default class SingleLinkedList<T = any> {
   private readonly logger = new Logger();
 
-  public head: ListNode<T> | null;
-  public tail: ListNode<T> | null;
-  public size: number = 0;
-
-  constructor() {
-    this.head = null;
-    this.tail = null;
-  }
-
-  // O(1)
-  isEmpty(): boolean {
-    return this.size === 0;
-  }
-
-  // O(1)
-  peek(): T | null {
-    return this.head?.value ?? null;
-  }
-
-  // O(1)
-  poll(): T | null {
-    return this.removeFirst();
-  }
-
-  add(value: T): void;
-  add(index: number, value: T): void;
-
-  // O(n)
-  add(indexOrValue: number | T, value?: T): void {
-    if (typeof indexOrValue === "number" && value !== undefined) {
-      this.addAtIndex(indexOrValue, value);
-    } else {
-      this.addLast(indexOrValue as T);
-    }
-  }
-
   // O(n)
   private addAtIndex(index: number, value: T): void {
     if (index < 0 || index > this.size) {
@@ -83,6 +47,27 @@ export default class SingleLinkedList<T = any> {
     this.size++;
   }
 
+  public head: ListNode<T> | null;
+  public tail: ListNode<T> | null;
+  public size: number = 0;
+
+  constructor() {
+    this.head = null;
+    this.tail = null;
+  }
+
+  add(value: T): void;
+  add(index: number, value: T): void;
+
+  // O(n)
+  add(indexOrValue: number | T, value?: T): void {
+    if (typeof indexOrValue === "number" && value !== undefined) {
+      this.addAtIndex(indexOrValue, value);
+    } else {
+      this.addLast(indexOrValue as T);
+    }
+  }
+
   // O(1)
   addFirst(value: T): void {
     const newNode = new ListNode(value);
@@ -107,6 +92,146 @@ export default class SingleLinkedList<T = any> {
 
     this.tail = newNode;
     this.size++;
+  }
+
+  // O(1)
+  clear(): void {
+    this.head = null;
+    this.tail = null;
+    this.size = 0;
+  }
+
+  // O(1)
+  getFirst(): T | null {
+    return this.head?.value ?? null;
+  }
+
+  // O(1)
+  getLast(): T | null {
+    return this.tail?.value ?? null;
+  }
+
+  // O(n)
+  indexOf(value: T): number {
+    let current = this.head;
+    let index = 0;
+
+    while (current) {
+      if (current.value === value) {
+        return index;
+      }
+
+      current = current.next;
+      index++;
+    }
+
+    return -1;
+  }
+
+  // O(1)
+  isEmpty(): boolean {
+    return this.size === 0;
+  }
+
+  // O(1)
+  peek(): T | null {
+    return this.head?.value ?? null;
+  }
+
+  // O(1)
+  poll(): T | null {
+    return this.removeFirst();
+  }
+
+  // O(n)
+  print(): void {
+    if (this.isEmpty()) {
+      return this.logger.info("List is empty");
+    }
+
+    let current = this.head;
+    const listValues = [];
+
+    while (current) {
+      listValues.push(current.value);
+      current = current.next;
+    }
+
+    this.logger.info(listValues);
+  }
+
+  // O(n)
+  printReverse(): void {
+    if (this.isEmpty()) {
+      return this.logger.info("List is empty");
+    }
+
+    let current = this.head;
+    const listValues = [];
+
+    while (current) {
+      listValues.unshift(current.value);
+      current = current.next;
+    }
+
+    this.logger.info(listValues);
+  }
+
+  // O(n)
+  remove(value: T): boolean {
+    let current = this.head;
+    let previous = null;
+
+    while (current) {
+      if (current.value === value) {
+        if (previous) {
+          previous.next = current.next;
+        } else {
+          this.head = current.next;
+        }
+
+        this.size--;
+        return true;
+      }
+
+      previous = current;
+      current = current.next;
+    }
+
+    return false;
+  }
+
+  // O(n)
+  removeAt(index: number): T | null {
+    if (index < 0 || index >= this.size) {
+      return null;
+    }
+
+    if (index === 0) {
+      return this.removeFirst();
+    }
+
+    if (index === this.size - 1) {
+      return this.removeLast();
+    }
+
+    let current = this.head;
+    let previous = null;
+    let i = 0;
+
+    while (i < index) {
+      previous = current;
+      current = current?.next || null;
+      i++;
+    }
+
+    if (previous) {
+      previous.next = current?.next || null;
+    }
+
+    this.size--;
+
+    return current?.value ?? null;
   }
 
   // O(1)
@@ -158,131 +283,6 @@ export default class SingleLinkedList<T = any> {
     this.size--;
 
     return current?.value ?? null;
-  }
-
-  // O(n)
-  print(): void {
-    if (this.isEmpty()) {
-      return this.logger.info("List is empty");
-    }
-
-    let current = this.head;
-    const listValues = [];
-
-    while (current) {
-      listValues.push(current.value);
-      current = current.next;
-    }
-
-    this.logger.info(listValues);
-  }
-
-  // O(n)
-  printReverse(): void {
-    if (this.isEmpty()) {
-      return this.logger.info("List is empty");
-    }
-
-    let current = this.head;
-    const listValues = [];
-
-    while (current) {
-      listValues.unshift(current.value);
-      current = current.next;
-    }
-
-    this.logger.info(listValues);
-  }
-
-  // O(1)
-  clear(): void {
-    this.head = null;
-    this.tail = null;
-    this.size = 0;
-  }
-
-  // O(n)
-  indexOf(value: T): number {
-    let current = this.head;
-    let index = 0;
-
-    while (current) {
-      if (current.value === value) {
-        return index;
-      }
-
-      current = current.next;
-      index++;
-    }
-
-    return -1;
-  }
-
-  // O(1)
-  getFirst(): T | null {
-    return this.head?.value ?? null;
-  }
-
-  // O(1)
-  getLast(): T | null {
-    return this.tail?.value ?? null;
-  }
-
-  // O(n)
-  removeAt(index: number): T | null {
-    if (index < 0 || index >= this.size) {
-      return null;
-    }
-
-    if (index === 0) {
-      return this.removeFirst();
-    }
-
-    if (index === this.size - 1) {
-      return this.removeLast();
-    }
-
-    let current = this.head;
-    let previous = null;
-    let i = 0;
-
-    while (i < index) {
-      previous = current;
-      current = current?.next || null;
-      i++;
-    }
-
-    if (previous) {
-      previous.next = current?.next || null;
-    }
-
-    this.size--;
-
-    return current?.value ?? null;
-  }
-
-  // O(n)
-  remove(value: T): boolean {
-    let current = this.head;
-    let previous = null;
-
-    while (current) {
-      if (current.value === value) {
-        if (previous) {
-          previous.next = current.next;
-        } else {
-          this.head = current.next;
-        }
-
-        this.size--;
-        return true;
-      }
-
-      previous = current;
-      current = current.next;
-    }
-
-    return false;
   }
 
   // O(n)
