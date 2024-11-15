@@ -24,4 +24,16 @@ describe("insertionSort", () => {
     const result = insertionSort(arr);
     expect(result).toEqual([]);
   });
+
+  it("should sort an array of strings", () => {
+    const arr = ["dog", "cat", "elephant", "bird"];
+    const result = insertionSort(arr);
+    expect(result).toEqual(["bird", "cat", "dog", "elephant"]);
+  });
+
+  it("should sort an array of strings in descending order", () => {
+    const arr = ["dog", "cat", "elephant", "bird"];
+    const result = insertionSort(arr, (a, b) => a < b);
+    expect(result).toEqual(["elephant", "dog", "cat", "bird"]);
+  });
 });

@@ -1,7 +1,7 @@
-export default function insertionSort(
-  arr: number[],
-  compareFn: (a: number, b: number) => boolean = (a, b) => a > b,
-): number[] {
+export default function insertionSort<T = any>(
+  arr: T[],
+  compareFn: (a: T, b: T) => boolean = (a, b) => a > b,
+): T[] {
   const n = arr.length;
   for (let i = 1; i < n; i++) {
     let j = i;

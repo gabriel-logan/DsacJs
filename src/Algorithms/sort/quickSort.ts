@@ -1,7 +1,7 @@
-export default function quickSort(
-  arr: number[],
-  compareFn: (a: number, b: number) => boolean = (a, b) => a > b,
-): number[] {
+export default function quickSort<T = any>(
+  arr: T[],
+  compareFn: (a: T, b: T) => boolean = (a, b) => a > b,
+): T[] {
   if (arr.length <= 1) {
     return arr;
   }
