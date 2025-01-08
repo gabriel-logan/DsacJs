@@ -44,7 +44,10 @@
     "dsacjs",
     "DsacJs"
   ],
-  "author": "Gabriel Logan",
+  "author": {
+    "name": "Gabriel Logan",
+    "url": "https://github.com/gabriel-logan/"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/gabriel-logan/dsacjs/issues"
