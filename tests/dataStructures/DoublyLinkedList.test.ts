@@ -314,6 +314,15 @@ describe("DoublyLinkedList", () => {
       expect(list.tail?.next).toBeNull();
       expect(list.tail?.prev?.value).toBe(2);
     });
+
+    it("should return null if current?.value is undefined", () => {
+      const list = new DoublyLinkedList();
+      list.add(1);
+      list.add(2);
+      list.add(3);
+      list.head = null;
+      expect(list.removeAt(1)).toBeNull();
+    });
   });
 
   describe("RemoveFirst", () => {
@@ -345,6 +354,15 @@ describe("DoublyLinkedList", () => {
       expect(list.head?.prev ?? null).toBeNull();
       expect(list.tail?.next ?? null).toBeNull();
       expect(list.tail?.prev ?? null).toBeNull();
+    });
+
+    it("should return null if this.head?.value is undefined", () => {
+      const list = new DoublyLinkedList();
+      list.add(1);
+      list.add(2);
+      list.add(3);
+      list.head = null;
+      expect(list.removeFirst()).toBeNull();
     });
   });
 
@@ -382,6 +400,15 @@ describe("DoublyLinkedList", () => {
       expect(list.head?.prev ?? null).toBeNull();
       expect(list.tail?.next ?? null).toBeNull();
       expect(list.tail?.prev ?? null).toBeNull();
+    });
+
+    it("should return null if this.tail?.value is undefined", () => {
+      const list = new DoublyLinkedList();
+      list.add(1);
+      list.add(2);
+      list.add(3);
+      list.tail = null;
+      expect(list.removeLast()).toBeNull();
     });
   });
 
@@ -453,6 +480,15 @@ describe("DoublyLinkedList", () => {
       list.add(2);
       list.add(3);
       expect(list.get(3)).toBeNull();
+    });
+
+    it("should return null if current?.value is undefined", () => {
+      const list = new DoublyLinkedList();
+      list.add(1);
+      list.add(2);
+      list.add(3);
+      list.head = null;
+      expect(list.get(1)).toBeNull();
     });
   });
 

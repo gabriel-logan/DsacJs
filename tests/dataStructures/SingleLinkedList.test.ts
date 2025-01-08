@@ -163,6 +163,20 @@ describe("SingleLinkedList", () => {
       const list = new SingleLinkedList<number>();
       expect(() => list.add(1, 1)).toThrow("Index out of bounds");
     });
+
+    test("newNode.next should point to null if current?.next is undefined", () => {
+      const list = new SingleLinkedList<number>();
+      list.add(0, 1);
+      list.add(1, 2);
+
+      if (list.head) {
+        list.head.next = null;
+      }
+
+      list.add(1, 3);
+
+      expect(list.head?.value).toBe(1);
+    });
   });
   describe("add", () => {
     it("should add a new node at the end of the list", () => {
@@ -250,6 +264,32 @@ describe("SingleLinkedList", () => {
       expect(list.removeAt(-1)).toBe(null);
       expect(list.removeAt(0)).toBe(null);
     });
+
+    it("should return null if current?.value is undefined", () => {
+      const list = new SingleLinkedList<number>();
+      list.add(1);
+      list.add(2);
+      list.add(3);
+      list.head = null;
+      expect(list.removeAt(1)).toBe(null);
+    });
+
+    test("previous.next should point to null if current?.next is undefined", () => {
+      const list = new SingleLinkedList<number>();
+      list.add(1);
+      list.add(2);
+      list.add(3);
+
+      if (list.head) {
+        list.head.next = null;
+      }
+
+      expect(list.removeAt(1)).toBe(null);
+      expect(list.head?.value).toBe(1);
+      expect(list.tail?.value).toBe(3);
+      expect(list.head?.next?.value).toBe(undefined);
+      expect(list.tail?.next).toBe(null);
+    });
   });
 
   describe("Remove", () => {
@@ -326,6 +366,15 @@ describe("SingleLinkedList", () => {
       expect(list.head).toBe(null);
       expect(list.tail).toBe(null);
     });
+
+    it("should return null if current?.value is undefined", () => {
+      const list = new SingleLinkedList<number>();
+      list.add(1);
+      list.add(2);
+      list.add(3);
+      list.head = null;
+      expect(list.removeFirst()).toBe(null);
+    });
   });
 
   describe("RemoveLast", () => {
@@ -359,6 +408,22 @@ describe("SingleLinkedList", () => {
       expect(list.size).toBe(0);
       expect(list.tail).toBe(null);
       expect(list.head).toBe(null);
+    });
+
+    it("should return null if current?.value is undefined", () => {
+      const list = new SingleLinkedList<number>();
+      list.add(1);
+      list.add(2);
+      list.add(3);
+      list.head = null;
+      expect(list.removeLast()).toBe(null);
+    });
+
+    it("should return null when size === 1 and head?.value is undefined", () => {
+      const list = new SingleLinkedList<number>();
+      list.add(1);
+      list.head = null;
+      expect(list.removeLast()).toBe(null);
     });
   });
 
