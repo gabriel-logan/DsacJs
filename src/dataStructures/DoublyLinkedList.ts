@@ -266,20 +266,16 @@ export default class DoublyLinkedList<T = any> {
       i++;
     }
 
-    if (current) {
-      if (current.prev) {
-        current.prev.next = current.next;
-      }
-      if (current.next) {
-        current.next.prev = current.prev;
-      }
-
-      this.size--;
-
-      return current.value;
+    if (current?.prev) {
+      current.prev.next = current.next;
+    }
+    if (current?.next) {
+      current.next.prev = current.prev;
     }
 
-    return null;
+    this.size--;
+
+    return current?.value ?? null;
   }
 
   // O(1)
