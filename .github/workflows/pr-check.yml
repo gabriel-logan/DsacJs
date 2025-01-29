@@ -1,5 +1,8 @@
 name: PR Check
 
+permissions:
+  contents: read
+
 on:
   # Runs on pushes targeting the default branch
   pull_request:
