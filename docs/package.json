@@ -11,7 +11,7 @@
     "vitepress": "^1.6.3",
     "vitepress-carbon": "^1.5.0"
   },
-  "devDependencies": {
+  "resolutions": {
     "esbuild": "^0.25.0"
   },
   "packageManager": "yarn@4.6.0"
