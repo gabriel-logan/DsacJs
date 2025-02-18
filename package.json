@@ -13,8 +13,8 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "build": "rm -rf dist && rm -rf types && tsc -p tsconfig.build.json && tsc -p tsconfig.types.json",
-    "lint": "eslint . --ext .ts",
-    "lint:fix": "eslint . --ext .ts --fix",
+    "lint": "eslint src/**/*.ts tests/**/*.ts",
+    "lint:fix": "yarn lint --fix",
     "format": "prettier --write .",
     "pr-check": "yarn format && yarn lint && yarn test && yarn build"
   },
