@@ -47,6 +47,16 @@
     "name": "Gabriel Logan",
     "url": "https://github.com/gabriel-logan/"
   },
+  "funding": [
+		{
+			"type": "github",
+			"url": "https://github.com/sponsors/gabriel-logan"
+		},
+		{
+			"type": "buy-me-a-coffee",
+			"url": "https://buymeacoffee.com/gabriellogan"
+		}
+	],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/gabriel-logan/dsacjs/issues"
