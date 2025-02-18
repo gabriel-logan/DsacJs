@@ -56,11 +56,11 @@ export default class SingleLinkedList<T = any> {
     this.tail = null;
   }
 
-  add(value: T): void;
-  add(index: number, value: T): void;
+  public add(value: T): void;
+  public add(index: number, value: T): void;
 
   // O(n)
-  add(indexOrValue: number | T, value?: T): void {
+  public add(indexOrValue: number | T, value?: T): void {
     if (typeof indexOrValue === "number" && value !== undefined) {
       this.addAtIndex(indexOrValue, value);
     } else {
@@ -69,7 +69,7 @@ export default class SingleLinkedList<T = any> {
   }
 
   // O(1)
-  addFirst(value: T): void {
+  public addFirst(value: T): void {
     const newNode = new ListNode(value);
     if (this.isEmpty()) {
       this.tail = newNode;
@@ -82,7 +82,7 @@ export default class SingleLinkedList<T = any> {
   }
 
   // O(1)
-  addLast(value: T): void {
+  public addLast(value: T): void {
     const newNode = new ListNode(value);
     if (this.isEmpty()) {
       this.head = newNode;
@@ -95,24 +95,24 @@ export default class SingleLinkedList<T = any> {
   }
 
   // O(1)
-  clear(): void {
+  public clear(): void {
     this.head = null;
     this.tail = null;
     this.size = 0;
   }
 
   // O(1)
-  getFirst(): T | null {
+  public getFirst(): T | null {
     return this.head?.value ?? null;
   }
 
   // O(1)
-  getLast(): T | null {
+  public getLast(): T | null {
     return this.tail?.value ?? null;
   }
 
   // O(n)
-  indexOf(value: T): number {
+  public indexOf(value: T): number {
     let current = this.head;
     let index = 0;
 
@@ -129,22 +129,22 @@ export default class SingleLinkedList<T = any> {
   }
 
   // O(1)
-  isEmpty(): boolean {
+  public isEmpty(): boolean {
     return this.size === 0;
   }
 
   // O(1)
-  peek(): T | null {
+  public peek(): T | null {
     return this.head?.value ?? null;
   }
 
   // O(1)
-  poll(): T | null {
+  public poll(): T | null {
     return this.removeFirst();
   }
 
   // O(n)
-  print(): void {
+  public print(): void {
     if (this.isEmpty()) {
       return this.logger.info("List is empty");
     }
@@ -158,10 +158,12 @@ export default class SingleLinkedList<T = any> {
     }
 
     this.logger.info(listValues);
+
+    return void 0;
   }
 
   // O(n)
-  printReverse(): void {
+  public printReverse(): void {
     if (this.isEmpty()) {
       return this.logger.info("List is empty");
     }
@@ -175,10 +177,12 @@ export default class SingleLinkedList<T = any> {
     }
 
     this.logger.info(listValues);
+
+    return void 0;
   }
 
   // O(n)
-  remove(value: T): boolean {
+  public remove(value: T): boolean {
     let current = this.head;
     let previous = null;
 
@@ -202,7 +206,7 @@ export default class SingleLinkedList<T = any> {
   }
 
   // O(n)
-  removeAt(index: number): T | null {
+  public removeAt(index: number): T | null {
     if (index < 0 || index >= this.size) {
       return null;
     }
@@ -235,7 +239,7 @@ export default class SingleLinkedList<T = any> {
   }
 
   // O(1)
-  removeFirst(): T | null {
+  public removeFirst(): T | null {
     if (this.isEmpty()) {
       return null;
     }
@@ -252,7 +256,7 @@ export default class SingleLinkedList<T = any> {
   }
 
   // O(n)
-  removeLast(): T | null {
+  public removeLast(): T | null {
     if (this.isEmpty()) {
       return null;
     }
@@ -286,7 +290,7 @@ export default class SingleLinkedList<T = any> {
   }
 
   // O(n)
-  toArray(): T[] {
+  public toArray(): T[] {
     let current = this.head;
     const listValues = [];
 

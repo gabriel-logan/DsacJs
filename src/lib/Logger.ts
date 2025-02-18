@@ -16,7 +16,7 @@ export default class Logger {
     this.prefix = prefix;
   }
 
-  log(data: any): void {
+  public log(data: any): void {
     if (this.prefix) {
       console.log(`[LOG] [${this.prefix}] ${data}`);
     } else {
@@ -24,7 +24,7 @@ export default class Logger {
     }
   }
 
-  error(data: any): void {
+  public error(data: any): void {
     if (this.prefix) {
       console.error(`[ERROR] [${this.prefix}] ${data}`);
     } else {
@@ -32,7 +32,7 @@ export default class Logger {
     }
   }
 
-  warn(data: any): void {
+  public warn(data: any): void {
     if (this.prefix) {
       console.warn(`[WARN] [${this.prefix}] ${data}`);
     } else {
@@ -40,7 +40,7 @@ export default class Logger {
     }
   }
 
-  info(data: any): void {
+  public info(data: any): void {
     if (this.prefix) {
       console.info(`[INFO] [${this.prefix}] ${data}`);
     } else {
@@ -48,7 +48,7 @@ export default class Logger {
     }
   }
 
-  debug(data: any): void {
+  public debug(data: any): void {
     if (this.prefix) {
       console.debug(`[DEBUG] [${this.prefix}] ${data}`);
     } else {
@@ -56,7 +56,7 @@ export default class Logger {
     }
   }
 
-  trace(data: any): void {
+  public trace(data: any): void {
     if (this.prefix) {
       console.trace(`[TRACE] [${this.prefix}] ${data}`);
     } else {
@@ -64,7 +64,7 @@ export default class Logger {
     }
   }
 
-  group(data: any): void {
+  public group(data: any): void {
     if (this.prefix) {
       console.group(`[GROUP] [${this.prefix}] ${data}`);
     } else {
@@ -72,11 +72,11 @@ export default class Logger {
     }
   }
 
-  groupEnd(): void {
+  public groupEnd(): void {
     console.groupEnd();
   }
 
-  verbose(data: any): void {
+  public verbose(data: any): void {
     if (this.prefix) {
       console.log(`[VERBOSE] [${this.prefix}] ${data}`);
     } else {
