@@ -13,7 +13,7 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "build:clean": "rm -rf dist && rm -rf types",
-    "build:dist": "tsc -p tsconfig.build.json",
+    "build:dist": "tsc",
     "build:types": "tsc -p tsconfig.types.json",
     "build": "yarn build:clean && yarn build:dist && yarn build:types",
     "lint": "eslint src/**/*.ts tests/**/*.ts",
