@@ -2,9 +2,9 @@
 module.exports = {
   testEnvironment: "node",
   transform: {
-    "^.+.tsx?$": ["ts-jest",{}],
+    "^.+.tsx?$": ["ts-jest", {}],
   },
   clearMocks: true,
   coverageDirectory: "coverage",
-  coverageProvider: "v8"
+  coverageProvider: "v8",
 };
