@@ -7,55 +7,55 @@ export default class Deque<T = any> {
     this.list = new DoublyLinkedList();
   }
 
-  clear(): void {
+  public clear(): void {
     this.list.clear();
   }
 
-  isEmpty(): boolean {
+  public isEmpty(): boolean {
     return this.list.isEmpty();
   }
 
-  iterator(): IterableIterator<T> {
+  public iterator(): IterableIterator<T> {
     return this.list.iterator();
   }
 
-  [Symbol.iterator](): IterableIterator<T> {
+  public [Symbol.iterator](): IterableIterator<T> {
     return this.iterator();
   }
 
-  peekBack(): T | null {
+  public peekBack(): T | null {
     return this.list.getLast();
   }
 
-  peekFront(): T | null {
+  public peekFront(): T | null {
     return this.list.peek();
   }
 
-  popBack(): T | null {
+  public popBack(): T | null {
     return this.list.removeLast();
   }
 
-  popFront(): T | null {
+  public popFront(): T | null {
     return this.list.removeFirst();
   }
 
-  print(): void {
+  public print(): void {
     return this.list.print();
   }
 
-  pushBack(value: T): void {
+  public pushBack(value: T): void {
     this.list.addLast(value);
   }
 
-  pushFront(value: T): void {
+  public pushFront(value: T): void {
     this.list.addFirst(value);
   }
 
-  size(): number {
+  public size(): number {
     return this.list.size;
   }
 
-  toArray(): T[] {
+  public toArray(): T[] {
     return this.list.toArray();
   }
 }

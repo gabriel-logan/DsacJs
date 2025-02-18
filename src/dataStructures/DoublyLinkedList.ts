@@ -60,11 +60,11 @@ export default class DoublyLinkedList<T = any> {
     this.tail = null;
   }
 
-  add(value: T): void;
-  add(index: number, value: T): void;
+  public add(value: T): void;
+  public add(index: number, value: T): void;
 
   // O(n) - O(1)
-  add(indexOrValue: number | T, value?: T): void {
+  public add(indexOrValue: number | T, value?: T): void {
     if (typeof indexOrValue === "number" && value) {
       this.addAtIndex(indexOrValue, value);
     } else {
@@ -73,7 +73,7 @@ export default class DoublyLinkedList<T = any> {
   }
 
   // O(1)
-  addFirst(value: T): void {
+  public addFirst(value: T): void {
     const newNode = new ListNode(value);
 
     if (this.isEmpty()) {
@@ -91,7 +91,7 @@ export default class DoublyLinkedList<T = any> {
   }
 
   // O(1)
-  addLast(value: T): void {
+  public addLast(value: T): void {
     const newNode = new ListNode(value);
 
     if (this.isEmpty()) {
@@ -109,14 +109,14 @@ export default class DoublyLinkedList<T = any> {
   }
 
   // O(1)
-  clear(): void {
+  public clear(): void {
     this.head = null;
     this.tail = null;
     this.size = 0;
   }
 
   // O(n)
-  contains(value: T): boolean {
+  public contains(value: T): boolean {
     let current = this.head;
 
     while (current) {
@@ -131,7 +131,7 @@ export default class DoublyLinkedList<T = any> {
   }
 
   // O(n)
-  get(index: number): T | null {
+  public get(index: number): T | null {
     if (index < 0 || index >= this.size) {
       return null;
     }
@@ -148,17 +148,17 @@ export default class DoublyLinkedList<T = any> {
   }
 
   // O(1)
-  getFirst(): T | null {
+  public getFirst(): T | null {
     return this.head?.value ?? null;
   }
 
   // O(1)
-  getLast(): T | null {
+  public getLast(): T | null {
     return this.tail?.value ?? null;
   }
 
   // O(n)
-  indexOf(value: T): number {
+  public indexOf(value: T): number {
     let current = this.head;
     let index = 0;
 
@@ -175,7 +175,7 @@ export default class DoublyLinkedList<T = any> {
   }
 
   // O(n)
-  iterator(): IterableIterator<T> {
+  public iterator(): IterableIterator<T> {
     let current = this.head;
 
     return {
@@ -195,22 +195,22 @@ export default class DoublyLinkedList<T = any> {
   }
 
   // O(1)
-  isEmpty(): boolean {
+  public isEmpty(): boolean {
     return this.size === 0;
   }
 
   // O(1)
-  peek(): T | null {
+  public peek(): T | null {
     return this.head?.value ?? null;
   }
 
   // O(n)
-  poll(): T | null {
+  public poll(): T | null {
     return this.removeFirst();
   }
 
   // O(n)
-  print(): void {
+  public print(): void {
     if (this.isEmpty()) {
       return this.logger.info("List is empty");
     }
@@ -224,10 +224,12 @@ export default class DoublyLinkedList<T = any> {
     }
 
     this.logger.info(listValues);
+
+    return void 0;
   }
 
   // O(n)
-  printReverse(): void {
+  public printReverse(): void {
     if (this.isEmpty()) {
       return this.logger.info("List is empty");
     }
@@ -241,10 +243,12 @@ export default class DoublyLinkedList<T = any> {
     }
 
     this.logger.info(listValues);
+
+    return void 0;
   }
 
   // O(n)
-  removeAt(index: number): T | null {
+  public removeAt(index: number): T | null {
     if (index < 0 || index >= this.size) {
       return null;
     }
@@ -279,7 +283,7 @@ export default class DoublyLinkedList<T = any> {
   }
 
   // O(1)
-  removeFirst(): T | null {
+  public removeFirst(): T | null {
     if (this.isEmpty()) {
       return null;
     }
@@ -302,7 +306,7 @@ export default class DoublyLinkedList<T = any> {
   }
 
   // O(1)
-  removeLast(): T | null {
+  public removeLast(): T | null {
     if (this.isEmpty()) {
       return null;
     }
@@ -325,7 +329,7 @@ export default class DoublyLinkedList<T = any> {
   }
 
   // O(n)
-  toArray(): T[] {
+  public toArray(): T[] {
     const listValues = [];
     let current = this.head;
 
