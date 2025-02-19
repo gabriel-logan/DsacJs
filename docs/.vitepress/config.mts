@@ -13,6 +13,17 @@ export default defineConfigWithTheme<ThemeConfig>({
   cleanUrls: true,
   ignoreDeadLinks: true,
 
+  locales: {
+    root: {
+      label: "English",
+      lang: "en",
+    }, 
+    pt: {
+      label: "Português",
+      lang: "pt",
+    }
+  },
+
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
