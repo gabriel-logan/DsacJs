@@ -17,7 +17,11 @@ export default defineConfigWithTheme<ThemeConfig>({
     root: {
       label: "English",
       lang: "en",
-    }, 
+    },
+    en: {
+      label: "English",
+      lang: "en",
+    },
     pt: {
       label: "Português",
       lang: "pt",
