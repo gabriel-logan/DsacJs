@@ -20,15 +20,15 @@ hero:
 features:
   - title: 📇 Algoritmos
     details: Diversas funções com algoritmos prontos para uso, de forma simples.
-    link: /pt/documentation/algorithms/
+    link: /documentation/algorithms/
 
   - title: 📈 Estruturas de Dados
     details: Uma coleção de estruturas de dados, com uma API simples e fácil de usar.
-    link: /pt/documentation/data-structures/
+    link: /documentation/data-structures/
 
   - title: ℹ️ Ferramentas
     details: Um conjunto de ferramentas para ajudar em suas tarefas diárias.
-    link: /pt/documentation/toolkit/
+    link: /documentation/toolkit/
 
 footer:
   text: "Feito com ❤️ por Gabriel Logan"
