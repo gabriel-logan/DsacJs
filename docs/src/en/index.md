@@ -3,35 +3,35 @@ layout: home
 
 hero:
   name: "DsacJs"
-  text: "Biblioteca TS/JS"
-  tagline: "Estruturas de Dados - Algoritmos - Coleção de Ferramentas"
+  text: "TS/JS Library"
+  tagline: "Data Structures - Algorithm - Toolkit Collection"
   icon: 🛠️
   image:
     src: https://gabriel-logan.github.io/DsacJs/logo-transparent.png
     alt: Banner
   actions:
     - theme: brand
-      text: Introdução
+      text: Introduction
       link: /guide/introduction
     - theme: alt
-      text: Ver no GitHub
+      text: View on GitHub
       link: "https://github.com/gabriel-logan/DsacJs"
 
 features:
-  - title: 📇 Algoritmos
-    details: Diversas funções com algoritmos prontos para uso, de forma simples.
+  - title: 📇 Algorithm
+    details: Various functions with ready-to-use algorithms, in an easy way.
     link: /documentation/algorithms/
 
-  - title: 📈 Estruturas de Dados
-    details: Uma coleção de estruturas de dados, com uma API simples e fácil de usar.
+  - title: 📈 Data Structures
+    details: A collection of data structures, with a simple and easy-to-use API.
     link: /documentation/data-structures/
 
-  - title: ℹ️ Ferramentas
-    details: Um conjunto de ferramentas para ajudar em suas tarefas diárias.
+  - title: ℹ️ Toolkit
+    details: A set of tools to help you in your daily tasks.
     link: /documentation/toolkit/
 
 footer:
-  text: "Feito com ❤️ por Gabriel Logan"
+  text: "Made with ❤️ by Gabriel Logan"
   actions:
     - text: "GitHub"
       link: "https://github.com/gabriel-logan/DsacJs"
