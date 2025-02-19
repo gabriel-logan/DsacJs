@@ -28,7 +28,7 @@ Uma biblioteca de alto desempenho para JavaScript e TypeScript, oferecendo um co
 
 ## Documentação
 
-Para mais informações sobre como usar o DsacJs, confira a [documentação](https://gabriel-logan.github.io/DsacJs/guide/introduction.html).
+Para mais informações sobre como usar o DsacJs, confira a [documentação](https://gabriel-logan.github.io/DsacJs/pt/guide/introduction.html).
 
 ## Contribuindo
 

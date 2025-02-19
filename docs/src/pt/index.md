@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: Introdução
-      link: /guide/introduction
+      link: /pt/guide/introduction
     - theme: alt
       text: Ver no GitHub
       link: "https://github.com/gabriel-logan/DsacJs"
@@ -20,15 +20,15 @@ hero:
 features:
   - title: 📇 Algoritmos
     details: Diversas funções com algoritmos prontos para uso, de forma simples.
-    link: /documentation/algorithms/
+    link: /pt/documentation/algorithms/
 
   - title: 📈 Estruturas de Dados
     details: Uma coleção de estruturas de dados, com uma API simples e fácil de usar.
-    link: /documentation/data-structures/
+    link: /pt/documentation/data-structures/
 
   - title: ℹ️ Ferramentas
     details: Um conjunto de ferramentas para ajudar em suas tarefas diárias.
-    link: /documentation/toolkit/
+    link: /pt/documentation/toolkit/
 
 footer:
   text: "Feito com ❤️ por Gabriel Logan"
