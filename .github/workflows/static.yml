@@ -29,16 +29,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "yarn"
+          cache: "npm"
 
       - name: Install dependencies
         working-directory: docs
-        run: yarn install
+        run: npm install
 
       - name: Build with VitePress
         working-directory: docs
         run: |
-          yarn build
+          npm run build
           mkdir -p ../staging
           cp -r .vitepress/dist/* ../staging
 
